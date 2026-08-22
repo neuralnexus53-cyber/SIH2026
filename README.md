@@ -1,8 +1,8 @@
 # SIH 2026
 TEAM LED :- KISHAN KUMAR APAT [LEADER]
 CO-LED :- SARTHAK MISHRA [VICE LEADER]
-OTHER MEMBERS :-
-1.PRADYUMNA KUMAR JENA
-2.BIBHU PRASAD
-3.ANSHITA
-4.ANNAYA
+                            OTHER MEMBERS 
+                            1.PRADYUMNA KUMAR JENA
+                            2.BIBHU PRASAD
+                            3.ANSHITA
+                            4.ANNAYA
