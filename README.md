@@ -1,9 +1,9 @@
 # Smart India Hackathon 2026 🇮🇳
 ## Project Title:
 ### **Team Name:** Neural Nexus  
-**Problem Statement ID:** [       ]
+**Problem Statement ID:**      
 **Category:** [Software]
-**Theme:**[]
+**Theme:**
 
 ---
 
