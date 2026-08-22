@@ -2,7 +2,7 @@
 ## Project Title:
 ### **Team Name:** Neural Nexus  
 **Problem Statement ID:** 
-**Category:** [Software]
+**Category:** Software]
 **Theme:**
 
 ---
