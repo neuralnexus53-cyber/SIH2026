@@ -18,12 +18,12 @@
 
 | Role | Name | Department / Year | Primary Responsibilities | GitHub / LinkedIn |
 | :--- | :--- | :--- | :--- | :--- |
-| **Team Leader** | Kishan Kumar Apat | [e.g., CSE / 2ND Year] | System Architecture, Full-Stack Lead | [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)](https://github.com/) |
-| **Member 2** | [Member 2] | [e.g., AI/DS / 3rd Year] | ML Model Training & Data Pipelines | [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)](https://github.com/) |
-| **Member 3** | [Member 3] | [e.g., IT / 2nd Year] | Backend API & Database Design | [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)](https://github.com/) |
-| **Member 4** | [Member 4] | [e.g., CSE / 3rd Year] | Frontend & UI/UX Integration | [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)](https://github.com/) |
-| **Member 5** | [Member 5] | [e.g., ECE / 2nd Year] | Cloud Deployment, DevOps, Security | [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)](https://github.com/) |
-| **Member 6** | [Member 6] | [e.g., CSE / 3rd Year] | Testing, Quality Assurance & Documentation | [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)](https://github.com/) |
+| **Team Leader** | Kishan Kumar Apat | [CSE / 2ND Year] | System Architecture, Full-Stack Lead | [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)](https://github.com/) |
+| **Member 2** | SARTHAK MISHRA | [CSE / 2ND Year] | ML Model Training & Data Pipelines | [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)](https://github.com/) |
+| **Member 3** | PRADYUMNA KUMAR JENA | [CSE / 2ND Year] | Backend API & Database Design | [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)](https://github.com/) |
+| **Member 4** | BIBHU PRASAD MISHRA | [CSE / 2ND Year] | Frontend & UI/UX Integration | [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)](https://github.com/) |
+| **Member 5** | ANANYA | [CSE / 2ND Year] | Cloud Deployment, DevOps, Security | [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)](https://github.com/) |
+| **Member 6** | ANSHITA | [CSE / 2ND Year] | Testing, Quality Assurance & Documentation | [![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)](https://github.com/) |
 
 ---
 
