@@ -33,7 +33,6 @@
 | :--- | :--- |
 | **Frontend** | React / Next.js, Tailwind CSS, TypeScript |
 | **Backend & APIs** | FastAPI / Node.js, Express, REST APIs |
-| **AI / Machine Learning** | Python, PyTorch / TensorFlow, scikit-learn |
 | **Database & Caching** | PostgreSQL / MongoDB, Redis |
 | **Cloud & Deployment** | Docker, Google Cloud Platform / AWS |
 
