@@ -1,0 +1,13 @@
+{
+  "name": "sih-project",
+  "version": "1.0.0",
+  "description": "Smart India Hackathon 2026 frontend",
+  "private": true,
+  "scripts": {
+    "dev": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
