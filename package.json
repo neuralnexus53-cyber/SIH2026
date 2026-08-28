@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --watch",
+    "serve": "python -m http.server 5500 --bind 127.0.0.1",
     "build": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --minify"
   },
   "devDependencies": {
