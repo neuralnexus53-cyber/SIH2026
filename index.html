@@ -3,14 +3,202 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  	<link rel="stylesheet" href="./dist/output.css" />
-		
+  <title>GeM Header Clone</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Local compiled Tailwind CSS -->
+  <link rel="stylesheet" href="./dist/output.css" />
 </head>
-<body>
-  <div class="app">
-   
+<body class="bg-gray-100 font-sans">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-[#1e3a8a] text-white text-xs py-1 px-4 flex justify-between items-center">
+    <div class="flex items-center space-x-4">
+      <a href="#" class="hover:underline"><i class="fa-solid fa-graduation-cap mr-1"></i> Interactive Training Courses <span class="bg-yellow-400 text-black text-[10px] px-1 font-bold rounded">NEW</span></a>
+    </div>
+    <div class="flex items-center space-x-4">
+      <!-- Language Selector Dropdown -->
+      <div class="relative">
+        <select id="languageSelect" class="bg-transparent border border-gray-400 rounded px-2 py-0.5 text-xs text-white cursor-pointer focus:outline-none focus:bg-[#1e3a8a]">
+          <option value="en">English</option>
+          <option value="hi">हिंदी</option>
+          <option value="ta">தமிழ்</option>
+          <option value="bn">বাংলা</option>
+          <option value="as">অસમীয়া</option>
+          <option value="pa">ਪੰਜਾਬੀ</option>
+          <option value="gu">ગુજરાતી</option>
+          <option value="kn">કન્નડ</option>
+          <option value="mr">मराठी</option>
+          <option value="ml">മലയാളം</option>
+          <option value="or">ଓଡ଼ିଆ</option>
+          <option value="te">తెలుగు</option>
+        </select>
+      </div>
+    </div>
   </div>
+
+  <!-- Main Navigation Header -->
+  <header class="bg-[#0b2545] text-white">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-4">
+      
+      <!-- Logo Section -->
+      <div class="flex items-center space-x-3">
+        <div class="bg-white p-1 rounded">
+          <span class="text-[#0b2545] font-extrabold text-2xl tracking-tight">GeM</span>
+        </div>
+        <div class="border-l border-gray-500 pl-3">
+          <h1 class="text-sm font-bold leading-tight">Government e Marketplace</h1>
+          <p class="text-[10px] text-gray-300">Efficient • Transparent • Inclusive</p>
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <nav class="hidden md:flex items-center space-x-4 text-xs">
+        <a href="#" class="hover:text-yellow-400 font-semibold">Need Help?</a>
+        <a href="#" class="hover:text-yellow-400 font-semibold">Bids</a>
+        <a href="#" class="hover:text-yellow-400 font-semibold">RA</a>
+        <a href="#" class="hover:text-yellow-400 font-semibold">Sign Up</a>
+        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-3 py-1.5 rounded transition">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Navigation Menu Bar -->
+  <div class="bg-[#13325b] text-white text-sm border-t border-blue-900">
+    <div class="max-w-7xl mx-auto px-4 flex items-center space-x-6 overflow-x-auto py-2">
+      <a href="#" class="hover:text-yellow-400 font-medium whitespace-nowrap">PRODUCTS</a>
+      <a href="#" class="hover:text-yellow-400 font-medium whitespace-nowrap">SERVICES</a>
+      <a href="#" class="hover:text-yellow-400 font-medium whitespace-nowrap">CONTENT</a>
+      <a href="#" class="hover:text-yellow-400 font-medium whitespace-nowrap">BUSINESS OPPORTUNITIES</a>
+    </div>
+  </div>
+
+  <!-- Search Bar Hero Section -->
+  <section class="bg-[#0b2545] py-8 px-4 border-t border-blue-800">
+    <div class="max-w-3xl mx-auto">
+      <!-- Search Form -->
+      <form id="gemSearchForm" class="flex items-center bg-white rounded-md overflow-hidden shadow-lg">
+        <!-- Search Category Dropdown -->
+        <select id="searchCategory" class="bg-gray-100 text-gray-700 text-xs md:text-sm px-3 py-3 border-r border-gray-300 focus:outline-none cursor-pointer">
+          <option value="products">Products</option>
+          <option value="services">Services</option>
+        </select>
+        
+        <!-- Search Input -->
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Looking for something on GeM?" 
+          class="w-full px-4 py-3 text-gray-800 text-sm focus:outline-none"
+          required
+        />
+        
+        <!-- Submit Button -->
+        <button 
+          type="submit" 
+          class="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 text-sm font-semibold flex items-center justify-center transition"
+        >
+          <i class="fa-solid fa-magnifying-glass mr-1"></i>
+          <span class="hidden sm:inline">Search</span>
+        </button>
+      </form>
+    </div>
+  </section>
+  <div class="h-full w-full bg-blue-900">
+    <!-- all content will be dynimically displayed here  -->
+     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla fugiat, dolorem iure deleniti quia nesciunt dolores molestias accusamus quas error fuga tempore maiores blanditiis ipsam doloribus cumque ab tenetur, itaque debitis pariatur. Inventore, reprehenderit quia. Saepe deleniti fugiat et quam ut aliquid asperiores enim natus ullam, minima nobis fugit porro officia voluptatem error provident ipsam vel odio dolorum ducimus. Officia tenetur sed consequatur recusandae quae! Blanditiis repellat, quas assumenda nesciunt dicta totam et, unde placeat eius nulla tempore. Veniam aperiam unde blanditiis, quia quis qui a beatae libero animi. Corrupti facere ex et veniam placeat earum vitae magnam laboriosam sapiente explicabo maxime quis voluptates id minus tempore officiis accusantium, suscipit aliquid illo aliquam. Deserunt consequatur eum fugit, eveniet iusto odit exercitationem quisquam laborum dolorum perspiciatis perferendis vel facilis expedita labore. Aut ex soluta modi error assumenda blanditiis nam debitis nihil dicta placeat vel, impedit aliquam consequuntur earum enim dolores nemo veritatis sint vitae consequatur facere sit dolore. Voluptas ad, id illo sit eius similique tenetur quam dolor dolorem possimus, nihil suscipit laboriosam excepturi? Beatae non doloremque suscipit laborum quibusdam incidunt voluptate? Dolore suscipit tempora non error debitis nostrum officia reiciendis voluptatum distinctio ab natus molestias expedita quis qui, sunt dolor ea reprehenderit vero ipsa quod porro sit, est deserunt? Tenetur ex doloribus quae. Voluptatum consequatur nam reiciendis doloribus repudiandae! Quo ab voluptatem ea sequi! Doloremque voluptates possimus minima necessitatibus totam delectus porro eligendi consectetur nemo amet facilis, quas odit adipisci, atque sequi iure quod explicabo ipsum placeat illo qui error officia non distinctio! Earum, assumenda laboriosam possimus, beatae est fugiat dolorem aliquam minus eligendi dolor saepe. Amet cumque sequi hic corporis, quaerat laboriosam laudantium repellat architecto nisi assumenda molestias facilis sunt nostrum voluptatibus, magni unde dignissimos ex voluptas soluta explicabo mollitia quidem numquam porro. Sequi officia corporis itaque doloremque possimus dolorum tempora, facere suscipit illo necessitatibus facilis quae nam enim, officiis ut delectus voluptatem voluptate. Unde ratione quo voluptates nisi ipsum, quod laborum aliquam deleniti aspernatur nam amet quae? Vel eius quam temporibus quibusdam enim? Quia laboriosam deserunt debitis error quos laborum? Aliquid exercitationem dolore architecto saepe aliquam maxime ad! Libero atque excepturi dicta animi provident labore quibusdam illum. Blanditiis quo vero, ratione officia adipisci est tempora sint suscipit dolores iste ipsum alias eum, optio maiores delectus provident illo. Quia est quis quos corporis laborum magni repellendus, incidunt sint illum quam, earum a deserunt veniam! Nemo, quam iure fuga autem facilis delectus distinctio sint ex, incidunt provident est ducimus accusantium. Exercitationem veniam repellendus mollitia nemo quia beatae reprehenderit maxime, cumque ut fugiat? Eveniet soluta laudantium beatae impedit dolorem ducimus, eaque cupiditate temporibus minus aut esse amet libero dicta numquam earum, quas commodi, minima totam ex iste eum rem repudiandae? Magni blanditiis et eveniet nobis sequi repudiandae cupiditate neque vero alias sit aliquid doloremque facere odit, expedita, doloribus optio impedit commodi maiores sapiente dolorem? Amet quaerat ab dolorem. Accusantium harum, dignissimos, soluta tempore, minima dolorum quisquam explicabo dicta molestias repellendus consequatur. Dolorem expedita quae reiciendis necessitatibus, asperiores neque dolore quisquam doloribus. Officia id ipsum nobis sint pariatur eaque temporibus quibusdam modi commodi alias minima consequuntur atque voluptates ut magni ex cumque at velit, quam libero error. Corporis minus laborum labore provident molestias rerum repellat nemo, aliquid a sint officiis magnam velit! Animi et facere veritatis aliquid ad vel dolorem ipsum cum? Iure esse ab inventore nemo reiciendis culpa veniam, fugit doloremque quia, dolorem aut expedita commodi velit? Ratione quisquam dolorem quis dignissimos labore, nulla recusandae odio libero, quidem quaerat, dolore exercitationem. Possimus fuga alias in placeat, aliquid earum voluptas deserunt soluta laudantium perspiciatis temporibus pariatur? Sequi reprehenderit magni dolorum id. Voluptates in suscipit rem maxime officia delectus asperiores, aliquid officiis voluptas sint fugit illo nihil accusamus provident consequatur obcaecati, non possimus itaque nam velit, corrupti eveniet eaque? Culpa sequi commodi dolorem doloribus reiciendis non, tempore voluptatibus numquam nihil sint, magnam nulla minus iusto aut fugiat, nobis sapiente repudiandae. Sequi esse molestias dolores mollitia fugit earum quasi id recusandae nam corporis, magnam, tempora quis animi est voluptate modi similique distinctio omnis nobis qui cumque, nihil minima quaerat. Cupiditate totam voluptatum, culpa quae aspernatur impedit nostrum voluptatem recusandae quidem sequi unde obcaecati asperiores nemo numquam, delectus dolor magni vitae tempore illo sint explicabo eum, vero labore. Nulla unde veritatis officia fugit, itaque possimus ratione reiciendis in! Quam consequuntur cupiditate nulla, ex consectetur quaerat perferendis architecto temporibus odit. Nisi perspiciatis, aliquam eum vel ducimus libero. Molestias velit ipsa maxime ducimus minima possimus quas numquam debitis quidem assumenda quae, libero ipsam et at explicabo saepe voluptas est repellendus aliquid sunt! Error omnis officiis, libero beatae, esse perferendis quam, tempore incidunt earum excepturi reiciendis delectus blanditiis nobis! Rerum est delectus labore tempora, maiores consectetur distinctio illo. Eligendi qui vero perspiciatis hic quidem dolore temporibus, fugit incidunt, laudantium commodi quibusdam eius quod provident aperiam eveniet quasi alias similique delectus obcaecati, expedita quis quae aliquid facilis dolorem. Voluptates obcaecati odio facilis numquam omnis deserunt ullam labore eveniet esse corporis soluta, temporibus nemo eligendi nam doloremque ipsa nihil tenetur tempore necessitatibus cum magni animi asperiores magnam? Placeat necessitatibus ex illum corporis nihil ad, aspernatur accusamus commodi quas, temporibus eius suscipit quisquam ut quasi. In asperiores quasi dolorem rerum numquam dignissimos reprehenderit. Eos rem, qui laudantium nulla possimus provident minima saepe similique quibusdam fuga harum neque impedit consectetur officia? Qui accusantium tempore numquam unde dolore corrupti reprehenderit voluptatem, asperiores dolorem est ipsum exercitationem perferendis recusandae. Fugiat tempore deserunt iure sequi amet sed dignissimos vel earum accusamus cum! Tenetur veniam, soluta commodi rem corporis ipsa quas assumenda officia dolorem, illum et enim exercitationem, vitae quasi aliquam ullam repudiandae laborum dolore? Ad et velit praesentium, recusandae rerum officiis voluptate fugit possimus delectus quam est cupiditate assumenda, cum ducimus sapiente adipisci repellendus dolorum! Molestias labore nisi, commodi in pariatur suscipit! Eligendi dolore quis, quibusdam atque provident possimus illum esse? Repudiandae odit, dignissimos aliquid eligendi sit, adipisci aperiam nisi officia, incidunt animi molestias. Non quibusdam quae maiores voluptate recusandae harum consequuntur vero dolor earum vel! Illum, quaerat suscipit quae repudiandae deleniti possimus blanditiis dolores. 
+  </div>
+<footer class="bg-slate-900 text-slate-300 pt-12 pb-6 text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Main Footer Links Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 pb-12 border-b border-slate-800">
+      
+      <!-- Web Info -->
+       <div class="flex">
+      <div class="bg-white flex flex-col p-4 rounded-md">
+        <h3 class="text-black font-semibold mb-4 tracking-wide uppercase text-xs  flex justify-center">Web Info</h3>
+        <ul class="space-y-2 text-xs text-black p-2 rounded-md flex flex-col">
+          <li><a href="#" class="hover:text-yellow-200 transition-colors flex justify-center">Terms of Use</a></li>
+          <li><a href="#" class="hover:text-yellow-200 transition-colors flex justify-center">Website Policies</a></li>
+          <li><a href="#" class="hover:text-yellow-200 transition-colors flex justify-center">Document Help</a></li>
+          <li><a href="#" class="hover:text-yellow-200 transition-colors flex justify-center">Sitemap</a></li>
+          <li><a href="#" class="hover:text-yellow-200 transition-colors flex justify-center">Web Information Manager</a></li>
+        </ul>
+      </div>
+
+      <!-- About GeM -->
+      <div>
+        <h3 class="text-white font-semibold mb-4 tracking-wide uppercase text-xs flex justify-center">About GeM</h3>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Introduction to GeM</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Statistics</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Right to Information</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Analytics</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">New on GeM</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Testimonials</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Brand GeM</a></li>
+        </ul>
+      </div>
+      </div>
+
+      <!-- News & Events -->
+      <div>
+        <h3 class="text-white font-semibold mb-4 tracking-wide uppercase text-xs flex justify-center">News & Events</h3>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Newsroom</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Gallery</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Latest Updates/Features</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">CCM Schedule</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Forums</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <h3 class="text-white font-semibold mb-4 tracking-wide uppercase text-xs flex justify-center">Resources</h3>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">GeM Handbook</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">OM's/Circulars</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Terms and Conditions</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Policies/Manuals</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">GeM Integration Toolkit</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">List of Suspended Sellers</a></li>
+        </ul>
+      </div>
+
+      <!-- Need Help & Training -->
+      <div>
+        <h3 class="text-white font-semibold mb-4 tracking-wide uppercase text-xs flex justify-center">Need Help?</h3>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">FAQs</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Feedback</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Raise a Ticket</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Contact Us</a></li>
+          <li><a href="#" class="hover:text-white transition-colors flex justify-center">Careers</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+      <p class="text-center md:text-left">
+        © 2026 Government e Marketplace (GeM). All rights reserved.
+      </p>
+      <p class="text-center md:text-right max-w-xl">
+        Designed, developed, and maintained by MSP and owned by Government e Marketplace.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+
+  <!-- JavaScript Functionality -->
   <script src="./src/js/main.js" defer></script>
+
 </body>
 </html>
