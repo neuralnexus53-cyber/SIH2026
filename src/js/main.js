@@ -96,12 +96,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Section Builder: GeM Outlet Stores
   const createOutletStoresSection = () => `
-    <section class="py-10 px-4 sm:px-8 max-w-7xl mx-auto bg-black">
-   
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-slate-300/10 p-6 rounded-xl border border-slate-700/50 h-full">
-      <h3 class="text-xl sm:text-2xl font-bold tracking-tight mb-6 text-white b pl-40">
+    <section class="py-10 px-4 sm:px-8 max-w-7xl mx-auto">
+      <h2 class="text-xl sm:text-2xl font-bold tracking-tight mb-6 text-white border-l-4 border-amber-500 pl-3">
         GeM Outlet Stores
-      </h3>
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-slate-300/10 p-6 rounded-xl border border-slate-700/50 h-full">
       <div class="h-28 bg-white mb-4 border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 text-black transition-colors cursor-pointer">
       here immage will come 1
       </div>
@@ -144,9 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Section Builder: Product Categories
   const createProductsSection = () => `
-
-    <div class="grid grid-cols-2 grid-rows-3 gap-4 p-4 bg-gray-500 rounded-xl">
-      <section class="py-10 px-4 sm:px-8 max-w-7xl mx-auto">
+    <section class="py-10 px-4 sm:px-8 max-w-7xl mx-auto">
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-xl sm:text-2xl font-bold text-white border-l-4 border-amber-500 pl-3">
           Popular Product Categories
@@ -154,13 +151,13 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="#" class="text-xs font-semibold text-amber-400 hover:underline">Explore Market &rarr;</a>
       </div>
      
-    <div class="h-60 max-w-full bg-slate-500 rounded-lg content-center 
-  text-center"> box 1</div>
-  <div class="h-60 max-w-full bg-slate-500 rounded-lg content-center text-center"> box2</div>
-  <div class="h-60 max-w-full bg-slate-500 rounded-lg content-center text-center">box3</div>
-  <div class="h-60 max-w-full bg-slate-500 rounded-lg content-center text-center">box4</div>
-  <div class="h-60 max-w-full bg-slate-500 rounded-lg content-center text-center">box5</div>
-  <div class="h-60 max-w-full bg-slate-500 rounded-lg content-center text-center">box6</div>
+    <div class="grid grid-cols-2 grid-rows-3 gap-4 p-4 bg-gray-500 rounded-xl">
+  <div class="h-28 max-w-full bg-black rounded-lg"></div>
+  <div class="h-28 max-w-full bg-black rounded-lg"></div>
+  <div class="h-28 max-w-full bg-black rounded-lg"></div>
+  <div class="h-28 max-w-full bg-black rounded-lg"></div>
+  <div class="h-28 max-w-full bg-black rounded-lg"></div>
+  <div class="h-28 max-w-full bg-black rounded-lg"></div>
 </div>
      </div>
       
