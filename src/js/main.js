@@ -42,105 +42,201 @@ const startNoticeRotator = () => {
   requestAnimationFrame(step);
 };
 
-
 const stores = [
-  { img: "./src/components/img/gemout1.jpeg" },
-  { img: "./src/components/img/gemout2.jpeg" },
-  { img: "./src/components/img/gemout3.jpeg" },
-  { img: "./src/components/img/zemout4.jpeg" },
-  { img: "./src/components/img/zemout5.jpeg" },
-  { img: "./src/components/img/zemout6.jpeg" },
-  { img: "./src/components/img/zemout7.jpeg" },
-  { img: "./src/components/img/zemout8.jpeg" }
+  { img: "./src/components/img/saras.jpeg", title: "The Saras Collection" },
+  { img: "./src/components/img/odop.jpeg", title: "ODOP" },
+  { img: "./src/components/img/startup.jpeg", title: "Startup Runway" },
+  { img: "./src/components/img/aabhar.jpeg", title: "The Aabhar Collection" },
+  { img: "./src/components/img/handicraft.jpeg", title: "Handicrafts" },
+  { img: "./src/components/img/handloom.jpeg", title: "Handloom" },
+  { img: "./src/components/img/womaniya.jpeg", title: "Womaniya" },
+  { img: "./src/components/img/millet.jpeg", title: "Millet Products" }
 ];
 
 const createOutletStoresSection = () => {
   return `
-    <section class=" bg-slate-300 border-b  px-4 sm:px-8 py-6">
-     
+    <section class="w-full bg-slate-100 py-8 px-4 sm:px-8">
+      <div class="max-w-7xl mx-auto flex flex-col items-center">
+        
+        <!-- Main Centered Section Titles -->
+        <div class="text-center mb-6">
+          <h1 class="text-3xl sm:text-4xl font-normal text-emerald-700 tracking-wide mb-1">
+            #vocal<span class="text-orange-500">for</span>local
+          </h1>
+          <h2 class="text-base sm:text-lg font-semibold text-slate-700">
+            GeM Outlet Stores
+          </h2>
+        </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 bg-white rounded-xl border border-slate-700">
-      
-       <div class="max-w-7xl mx-auto flex flex-direction-row items-center justify-between gap-4 mb-4 sm:mb-6">
-       <h1 class="text-lg sm:text-3xl font-bold text-violet-950">
-         #VOCALforlocal
-       </h1>
-        <h2 class="text-lg sm:text-xl font-bold text-violet-950">
-          GeM Outlet Stores
-        </h2>
-      </div>
-        ${stores.map(store => `
-          <div class="h-28 bg-slate-800 border border-slate-700 hover:border-amber-500 rounded-lg transition-all cursor-pointer overflow-hidden group relative">
-            <img src="${store.img}" alt="Store Outlet" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-          </div>
-        `).join('')}
+        <!-- 4 Columns x 2 Rows Grid for Outlet Banners -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+          ${stores.map(store => `
+            <div class="h-24 sm:h-28 bg-white border border-slate-200 hover:border-amber-500 rounded-lg transition-all cursor-pointer overflow-hidden group shadow-xs">
+              <img 
+                src="${store.img}" 
+                alt="${store.title || 'Store Outlet'}" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform" 
+              />
+            </div>
+          `).join('')}
+        </div>
+
       </div>
     </section>
   `;
 };
 const createProductsSection = () => {
-  const products = [
-    { name: "Desktops & Laptops", img: "./src/components/img/product1.jpeg" },
-    { name: "Office Furniture", img: "./src/components/img/product2.jpeg" },
-    { name: "Medical Equipment", img: "./src/components/img/product3.jpeg" },
-    { name: "Automobiles", img: "./src/components/img/product4.jpeg" },
-    { name: "Paper & Stationery", img: "./src/components/img/product5.jpeg" },
-    { name: "Solar Energy", img: "./src/components/img/product6.jpeg" }
+  const categoryCards = [
+    {
+      title: "OXYGEN GAS & ACCESSORIES",
+      items: [
+        "Oxygen Concentrator",
+        "Oxygen Flow Meter",
+        "Compressed oxygen IS:309",
+        "O2 Gas Cylinders - Steel",
+        "HF Nasal O2 Therapy Unit"
+      ],
+      img: "./src/components/img/product1.jpeg"
+    },
+    {
+      title: "MEDICAL",
+      items: [
+        "Hand Sanitizer",
+        "Air Pollution Mask",
+        "Surgical Gloves",
+        "Covid-19 Kit for..."
+      ],
+      img: "./src/components/img/product2.jpeg"
+    },
+    {
+      title: "SARAS COLLECTION",
+      items: [
+        "Handicrafts",
+        "Handloom Texti..",
+        "Personal Care..",
+        "Accessories"
+      ],
+      img: "./src/components/img/product3.jpeg"
+    },
+    {
+      title: "FURNITURE",
+      items: [
+        "Office Chair",
+        "Computer Desk",
+        "Lounge Chair",
+        "Storage Rack"
+      ],
+      img: "./src/components/img/product4.jpeg"
+    },
+    {
+      title: "FIRE SAFETY",
+      items: [
+        "Fire Extinguishers",
+        "Sprinklers Smoke",
+        "Detectors Fire",
+        "Alarms"
+      ],
+      img: "./src/components/img/product5.jpeg"
+    },
+    {
+      title: "COMPUTERS",
+      items: [
+        "Desktop Computer",
+        "Computer Monitor",
+        "PC Software",
+        "Computer Printer"
+      ],
+      img: "./src/components/img/product6.jpeg"
+    }
   ];
 
   return `
-    <section class="px-4 sm:px-8 max-w-7xl mx-auto  pb-6 bg-slate-300">
-      <!-- Outer White Container containing both Header & Grid -->
-      <div class="bg-white rounded-xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+    <section class="w-full bg-slate-100 py-8 px-4 sm:px-8">
+      <div class="max-w-7xl mx-auto flex flex-col items-center">
         
-        <!-- Header inside the main container -->
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 mb-4">
+        <!-- Section Title -->
+        <h2 class="text-xl sm:text-2xl font-normal text-slate-800 text-center mb-6">
           Popular Product Categories
         </h2>
 
-        <!-- 3 Rows x 2 Columns Grid -->
-        <div class="grid grid-cols-2 gap-3 sm:gap-4">
-          ${products.map(item => `
-            <div class="h-32 sm:h-36 bg-slate-100 border border-slate-200 hover:border-amber-500 rounded-lg transition-all cursor-pointer overflow-hidden group relative">
-              <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+        <!-- 3 Columns x 2 Rows Grid for Laptop -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-8">
+          ${categoryCards.map(card => `
+            <div class="bg-white rounded-lg border border-slate-200 p-5 shadow-xs flex justify-between items-start hover:shadow-md hover:border-blue-400 transition-all cursor-pointer min-h-[190px]">
+              
+              <!-- Left Side: Title + Sub-items + View All -->
+              <div class="flex flex-col justify-between h-full pr-3 max-w-[65%]">
+                <div>
+                  <h3 class="text-xs lg:text-sm font-bold text-slate-700 tracking-wide uppercase mb-2">
+                    ${card.title}
+                  </h3>
+                  <ul class="space-y-1 text-[11px] lg:text-xs text-slate-500">
+                    ${card.items.map(item => `
+                      <li class="truncate">${item}</li>
+                    `).join('')}
+                  </ul>
+                </div>
+
+                <a href="#" class="text-xs text-orange-500 hover:text-orange-600 font-medium mt-3 inline-block">
+                  View All
+                </a>
+              </div>
+
+              <!-- Right Side: Category Image -->
+              <div class="w-20 h-20 lg:w-24 lg:h-24 flex-shrink-0 flex items-center justify-center self-center">
+                <img 
+                  src="${card.img}" 
+                  alt="${card.title}" 
+                  class="w-full h-full object-contain" 
+                />
+              </div>
+
             </div>
           `).join('')}
         </div>
-        <div class="text-center mt-4 sm:mt-6 text-white bg-orange-500 rounded-3xl p-2 sm:p-3 hover:bg-orange-600 transition-colors cursor-pointer">
-         <a href="#" class="text-sm sm:text-base font-semibold">EXPLORE THE MARKET &rarr;</a>
-        </div>
+
+        <!-- Bottom Action Button -->
+        <a href="#" class="py-2.5 px-8 rounded-full bg-gradient-to-r from-orange-500 to-amber-400 text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:opacity-95 transition-opacity">
+          EXPLORE THE MARKET &rarr;
+        </a>
 
       </div>
     </section>
   `;
 };
 
+
 const serviceCategories = [
-  { name: "Security Manpower", img: "./src/components/img/service1.jpeg" },
-  { name: "Catering", img: "./src/components/img/service2.jpeg" },
-  { name: "Human Resource", img: "./src/components/img/service3.jpeg" },
-  { name: "Goods and Transport Service", img: "./src/components/img/service4.jpeg" }
+  { name: "Security Manpower", img: "./src/components/img/security.png" },
+  { name: "Catering", img: "./src/components/img/catering.png" },
+  { name: "Human Resource", img: "./src/components/img/hr.png" },
+  { name: "Goods and Transport Service", img: "./src/components/img/transport.png" },
+  { name: "Vehicle Hiring", img: "./src/components/img/vehicle.png" }
 ];
 
 const createServicesSection = () => `
- <section class="bg-gradient-to-b from-[#0b5cbe] from-70% to-transparent to-30% px-4 sm:px-8 max-w-7xl mx-auto py-4 text-center w-full">
+  <section class="w-full bg-[#0b5cbe] pt-8 pb-16 px-4 sm:px-8 text-center">
     
     <!-- Title -->
     <h2 class="text-xl sm:text-2xl font-bold text-white mb-6">
       Popular Service Categories
     </h2>
 
-    <!-- White Card Container -->
-    <div class="bg-white rounded-xl shadow-lg p-6 max-w-md mx-auto flex flex-col items-center">
+    <!-- White Card Container (Expanded for Laptop View) -->
+    <div class="bg-white rounded-xl shadow-lg p-6 lg:p-10 max-w-xl lg:max-w-6xl mx-auto flex flex-col items-center">
       
-      <!-- Services List (Vertical Stack / Grid) -->
-      <div class="w-full flex flex-col gap-6 mb-8">
+      <!-- Services List (Horizontal Row on Desktop) -->
+      <div class="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 mb-8 items-start">
         ${serviceCategories.map(service => `
-          <div class="flex flex-col items-center justify-center cursor-pointer group">
-            <div class="w-16 h-16 mb-2 flex items-center justify-center">
-              <img src="${service.img}" alt="${service.name}" class="w-full h-full object-contain group-hover:scale-105 transition-transform" />
+          <div class="flex flex-col items-center justify-center cursor-pointer group px-2">
+            <div class="w-12 h-12 lg:w-16 lg:h-16 mb-3 flex items-center justify-center">
+              <img 
+                src="${service.img}" 
+                alt="${service.name}" 
+                class="w-full h-full object-contain group-hover:scale-105 transition-transform" 
+              />
             </div>
-            <span class="text-sm font-semibold text-slate-800 text-center leading-tight">
+            <span class="text-xs sm:text-sm font-semibold text-slate-800 text-center leading-tight">
               ${service.name}
             </span>
           </div>
@@ -148,14 +244,13 @@ const createServicesSection = () => `
       </div>
 
       <!-- Orange Gradient Action Button -->
-      <a href="#" class="w-full max-w-xs py-3 px-6 rounded-full bg-gradient-to-r from-orange-500 to-amber-400 text-white font-bold text-sm uppercase tracking-wider shadow-md hover:opacity-95 transition-opacity">
-        View All Services
+      <a href="#" class="py-2.5 px-8 rounded-full bg-gradient-to-r from-orange-500 to-amber-400 text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:opacity-95 transition-opacity inline-block">
+        VIEW ALL SERVICES
       </a>
 
     </div>
   </section>
 `;
-
  const stats = [
   { value: "10,676", label: "Product Categories" },
   { value: "2,028,454", label: "Order Value (Cr.)" },
@@ -341,6 +436,10 @@ const createTestimonialsSection = () => {
     </section>
   `;
 };
+
+
+// 1. Initiatives Component (Internal Mobile-Style Preserved)
+// Data for Initiatives Section
 const initiatives = {
   mainBanner: "./src/components/img/init_main.jpeg",
   subBanners: [
@@ -349,19 +448,19 @@ const initiatives = {
   ]
 };
 
+// 1. Initiatives Component
 const createInitiativesSection = () => `
-  <section class="py-6 px-4 sm:px-8 max-w-xl mx-auto text-left">
-    
-    <!-- Title -->
+  <div class="flex flex-col text-left">
+    <!-- Section Title -->
     <h2 class="text-xl sm:text-2xl font-semibold text-slate-800 mb-4 px-2">
       Initiatives
     </h2>
 
-    <!-- Main White Container -->
-    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-slate-100 flex flex-col gap-4">
+    <!-- Main Card Container -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-slate-100 flex flex-col gap-4 flex-1">
       
-      <!-- Top Large Banner Box -->
-      <div class="w-full bg-slate-50 border border-slate-200 rounded-lg overflow-hidden cursor-pointer group">
+      <!-- Top Main Banner Box -->
+      <div class="w-full bg-slate-50 border border-slate-200 rounded-lg overflow-hidden cursor-pointer group flex items-center justify-center">
         <img 
           src="${initiatives.mainBanner}" 
           alt="Main Initiative Banner" 
@@ -372,7 +471,7 @@ const createInitiativesSection = () => `
       <!-- Bottom 2 Side-by-Side Boxes -->
       <div class="grid grid-cols-2 gap-4">
         ${initiatives.subBanners.map((imgSrc, idx) => `
-          <div class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden h-28 sm:h-36 cursor-pointer group">
+          <div class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden h-28 sm:h-36 cursor-pointer group flex items-center justify-center">
             <img 
               src="${imgSrc}" 
               alt="Initiative ${idx + 1}" 
@@ -384,7 +483,7 @@ const createInitiativesSection = () => `
 
     </div>
 
-    <!-- Orange Gradient Action Button -->
+    <!-- Action Button -->
     <div class="flex justify-center mt-6">
       <a 
         href="#" 
@@ -393,32 +492,29 @@ const createInitiativesSection = () => `
         View All Initiatives
       </a>
     </div>
-
-  </section>
+  </div>
 `;
+
+// 2. GeM Connect Component
 const createGemConnectSection = () => `
-  <section class="py-6 px-4 sm:px-8 max-w-xl mx-auto text-left">
-    
-    <!-- Title -->
+  <div class="flex flex-col text-left">
+    <!-- Section Title -->
     <h2 class="text-xl sm:text-2xl font-semibold text-slate-800 mb-4 px-2">
       GeM Connect
     </h2>
 
-    <!-- Main White Container -->
-    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-slate-100 flex flex-col gap-4">
+    <!-- Main Card Container -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-slate-100 flex flex-col gap-4 flex-1">
       
-      <!-- Social Tabs (X and Facebook) -->
+      <!-- Social Media Tabs -->
       <div class="flex items-center gap-6 border-b border-slate-200 pb-2">
-        <!-- Active Tab: X (Twitter) -->
         <button class="relative pb-2 flex items-center justify-center cursor-pointer">
           <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center border border-slate-300">
             <span class="font-bold text-slate-800 text-sm">𝕏</span>
           </div>
-          <!-- Active Pink Indicator Bar -->
           <span class="absolute bottom-0 left-0 w-full h-[3px] bg-pink-700 rounded-full"></span>
         </button>
 
-        <!-- Inactive Tab: Facebook -->
         <button class="relative pb-2 flex items-center justify-center cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
           <div class="w-8 h-8 rounded-full bg-[#1877f2] flex items-center justify-center text-white font-bold text-sm">
             f
@@ -426,20 +522,18 @@ const createGemConnectSection = () => `
         </button>
       </div>
 
-      <!-- Social Post Card Container -->
+      <!-- Social Feed Card -->
       <div class="border border-slate-200 rounded-xl p-4 bg-white flex flex-col gap-3">
         
         <!-- Post Header -->
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <!-- GeM Profile Logo -->
             <div class="w-9 h-9 rounded-full overflow-hidden bg-slate-100 border border-slate-200">
               <img src="./src/components/img/gem_logo.png" alt="GeM Logo" class="w-full h-full object-contain" />
             </div>
             <div class="flex flex-col">
               <div class="flex items-center gap-1">
                 <span class="font-bold text-sm text-slate-900">GeM</span>
-                <!-- Verified Badge -->
                 <svg class="w-4 h-4 text-sky-500 fill-current" viewBox="0 0 24 24">
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                 </svg>
@@ -447,11 +541,10 @@ const createGemConnectSection = () => `
               <span class="text-xs text-slate-500">@GeM_India · <a href="#" class="text-sky-600 hover:underline">Follow</a></span>
             </div>
           </div>
-          <!-- X Close/Icon -->
           <span class="text-lg font-bold text-slate-800">𝕏</span>
         </div>
 
-        <!-- Post Body Text -->
+        <!-- Post Body -->
         <div class="text-xs sm:text-sm text-slate-800 leading-relaxed space-y-2">
           <p>जेम के साप्ताहिक <a href="#" class="text-sky-600 hover:underline">#TrainingCalendar</a> से लाभ उठाएं!</p>
           <p>
@@ -460,11 +553,9 @@ const createGemConnectSection = () => `
           </p>
         </div>
 
-        <!-- Embedded Media Card -->
+        <!-- Embedded Card -->
         <div class="relative mt-2 border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-4">
           <img src="./src/components/img/embbed_card.png" alt="Training Announcement" class="w-full h-auto object-cover rounded-md" />
-          
-          <!-- Watch on X Badge -->
           <a href="#" class="absolute bottom-3 right-3 bg-slate-900/90 text-white text-xs px-3 py-1.5 rounded-full font-medium flex items-center gap-1 hover:bg-black transition-colors shadow-md">
             Watch on 𝕏
           </a>
@@ -474,7 +565,7 @@ const createGemConnectSection = () => `
 
     </div>
 
-    <!-- Orange Gradient Action Button -->
+    <!-- Action Button -->
     <div class="flex justify-center mt-6">
       <a 
         href="#" 
@@ -483,7 +574,16 @@ const createGemConnectSection = () => `
         View All Notifications
       </a>
     </div>
+  </div>
+`;
 
+// 3. Main Outer Layout Wrapper (Mobile: 1 column stacked, Laptop: 2 columns side-by-side)
+const createMainMiddleSection = () => `
+  <section class="py-6 px-4 sm:px-8 max-w-xl lg:max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+      ${createInitiativesSection()}
+      ${createGemConnectSection()}
+    </div>
   </section>
 `;
   // Render function (Notice section call removed)
