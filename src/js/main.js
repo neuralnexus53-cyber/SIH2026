@@ -81,7 +81,7 @@ const stores = [
 
 const createOutletStoresSection = () => {
   return `
-    <section class="bg-slate-900/80 border-b border-slate-700 px-4 sm:px-8 py-6">
+    <section class=" bg-slate-300 border-b  px-4 sm:px-8 py-6">
      
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 bg-white rounded-xl border border-slate-700">
@@ -103,31 +103,42 @@ const createOutletStoresSection = () => {
     </section>
   `;
 };
-  const createProductsSection = () => {
-    const products = [
-      "Desktops & Laptops", "Office Furniture", "Medical Equipment", 
-      "Automobiles", "Paper & Stationery", "Solar Energy"
-    ];
+const createProductsSection = () => {
+  const products = [
+    { name: "Desktops & Laptops", img: "./src/components/img/product1.jpeg" },
+    { name: "Office Furniture", img: "./src/components/img/product2.jpeg" },
+    { name: "Medical Equipment", img: "./src/components/img/product3.jpeg" },
+    { name: "Automobiles", img: "./src/components/img/product4.jpeg" },
+    { name: "Paper & Stationery", img: "./src/components/img/product5.jpeg" },
+    { name: "Solar Energy", img: "./src/components/img/product6.jpeg" }
+  ];
 
-    return `
-      <section class="py-10 px-4 sm:px-8 max-w-7xl mx-auto">
-        <div class="flex items-center justify-between mb-6">
-          <h2 class="text-xl sm:text-2xl font-bold text-white border-l-4 border-amber-500 pl-3">
-            Popular Product Categories
-          </h2>
-          <a href="#" class="text-xs font-semibold text-amber-400 hover:underline">Explore Market &rarr;</a>
-        </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 p-4 bg-slate-900/80 rounded-xl border border-slate-700">
+  return `
+    <section class="px-4 sm:px-8 max-w-7xl mx-auto  pb-6 bg-slate-300">
+      <!-- Outer White Container containing both Header & Grid -->
+      <div class="bg-white rounded-xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+        
+        <!-- Header inside the main container -->
+        <h2 class="text-lg sm:text-xl font-bold text-slate-900 mb-4">
+          Popular Product Categories
+        </h2>
+
+        <!-- 3 Rows x 2 Columns Grid -->
+        <div class="grid grid-cols-2 gap-3 sm:gap-4">
           ${products.map(item => `
-            <div class="h-28 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg flex items-center justify-center p-4 cursor-pointer transition-colors">
-              <span class="text-sm font-semibold text-slate-200 text-center">${item}</span>
+            <div class="h-32 sm:h-36 bg-slate-100 border border-slate-200 hover:border-amber-500 rounded-lg transition-all cursor-pointer overflow-hidden group relative">
+              <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
           `).join('')}
         </div>
-      </section>
-    `;
-  };
+        <div class="text-center mt-4 sm:mt-6 text-white bg-orange-500 rounded-3xl p-2 sm:p-3 hover:bg-orange-600 transition-colors cursor-pointer">
+         <a href="#" class="text-sm sm:text-base font-semibold">EXPLORE THE MARKET &rarr;</a>
+        </div>
 
+      </div>
+    </section>
+  `;
+};
   const createServicesSection = () => `
     <section class="py-10 px-4 sm:px-8 max-w-7xl mx-auto">
       <h2 class="text-xl sm:text-2xl font-bold text-white border-l-4 border-amber-500 pl-3 mb-6">
