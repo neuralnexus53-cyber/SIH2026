@@ -19,98 +19,91 @@
 
 
   <!-- Main Navigation Header -->
-  <header class="bg-slate-900 text-white ">
-   
-    <div class="max-w-7xl mx-auto px-4 flex bg-transparent items-center justify-between flex-wrap gap-4 h-full">
-      <button class="p-2 text-white focus:outline-none" aria-label="Toggle Menu">
-  <svg 
-    class="w-8 h-8" 
-    fill="none" 
-    stroke="currentColor" 
-    stroke-width="2" 
-    stroke-linecap="round" 
-    stroke-linejoin="round" 
-    viewBox="0 0 24 24"
-  >
-    <path d="M4 6h16M4 12h16M4 18h16"></path>
-  </svg>
-</button>
-      <!-- Logo Section -->
-      <div class="flex items-center flex-content-center h-full w-16 md:w-auto gap-2">
-        <img src="/src/components/img/logoclone1.png" alt="GeM Logo" class="h-10 w-auto" />
-      </div>
-     <!-- User Profile Icon -->
-<div class="flex items-center justify-center p-4 bg-transparent rounded-full hover:bg-gray-700 transition-colors cursor-pointer">
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    stroke-width="1.5" 
-    stroke-linecap="round" 
-    stroke-linejoin="round" 
-    class="w-10 h-10 text-white"
-  >
-    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-    <circle cx="12" cy="7" r="4" />
-  </svg>
-</div>
+  <header class="bg-slate-900 text-white w-full">
+  
+  <!-- Top Navigation & Action Bar -->
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+    
+    <!-- Left: Hamburger (Mobile) + Logo -->
+    <div class="flex items-center gap-3">
+      <button class="p-1.5 text-white md:hidden hover:text-amber-400 focus:outline-none" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
 
-      <!-- Quick Action Buttons -->
-      <nav class="hidden md:flex items-center space-x-4 text-xs">
-        <a href="#" class="hover:text-yellow-400 font-semibold transition-colors">Need Help?</a>
-        <a href="#" class="hover:text-yellow-400 font-semibold transition-colors">Bids</a>
-        <a href="#" class="hover:text-yellow-400 font-semibold transition-colors">RA</a>
-        <a href="#" class="hover:text-yellow-400 font-semibold transition-colors">Sign Up</a>
-        <a href="#"
-          class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-4 py-1.5 rounded transition">Login</a>
-      </nav>
-      </div>
-       <!-- Navigation Menu Bar -->
-         <div class="bg-transparent text-white text-[0.60rem] border-t border-emerald-950 shadow-md ">
-    <div class="max-w-7xl mx-auto px-4 flex items-center space-x-6 overflow-x-auto py-2.5">
-      <a href="#" class="hover:text-yellow-400 font-medium whitespace-nowrap transition-colors">PRODUCTS</a>
-      <a href="#" class="hover:text-yellow-400 font-medium whitespace-nowrap transition-colors">SERVICES</a>
-      <a href="#" class="hover:text-yellow-400 font-medium whitespace-nowrap transition-colors">CONTENT</a>
-     <a href="#" class="hover:text-yellow-400 font-medium whitespace-nowrap transition-colors">INTRACTIVE TRANING COURCES</a>
-     
+      <a href="#" class="flex items-center">
+        <img src="/src/components/img/logoclone1.png" alt="GeM Logo" class="h-8 sm:h-10 w-auto object-contain" />
+      </a>
+    </div>
+
+    <!-- Center/Right Desktop Quick Actions (Hidden on Mobile) -->
+    <nav class="hidden md:flex items-center space-x-5 text-xs font-medium">
+      <a href="#" class="hover:text-amber-400 transition-colors">Forward Auction <span class="text-[9px]"></span></a>
+      <a href="#" class="hover:text-amber-400 transition-colors">Bids <span class="text-[9px]"></span></a>
+      <a href="#" class="hover:text-amber-400 transition-colors">Sign Up <span class="text-[9px]"></span></a>
+      <a href="#" class="hover:text-amber-400 transition-colors">Login <span class="text-[9px]"></span></a>
+    </nav>
+
+    <!-- Mobile User Profile Icon (Hidden on Desktop) -->
+    <div class="md:hidden flex items-center">
+      <button class="p-1 text-white hover:text-amber-400 transition-colors" aria-label="User Account">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-7 h-7">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Secondary Menu: Categories Row -->
+  <div class="border-t border-slate-800 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center space-x-6 overflow-x-auto text-[11px] font-semibold tracking-wider text-slate-200 uppercase scrollbar-none">
+      <a href="#" class="hover:text-amber-400 whitespace-nowrap text-amber-400 border-b-2 border-amber-400 pb-0.5">PRODUCTS</a>
+      <a href="#" class="hover:text-amber-400 whitespace-nowrap transition-colors">SERVICES</a>
+      <a href="#" class="hover:text-amber-400 whitespace-nowrap transition-colors">CONTENT</a>
+      <a href="#" class="hover:text-amber-400 whitespace-nowrap transition-colors flex items-center gap-1">
+        INTERACTIVE TRAINING COURSES
+        <span class="bg-amber-500 text-slate-950 text-[9px] font-extrabold px-1 rounded-sm uppercase">NEW</span>
+      </a>
     </div>
   </div>
-        <!-- Search Bar Hero Section -->
-  <section class="bg-transparent  px-4 tranxprent py-2">
-    <div class="max-w-3xl mx-auto">
 
-      <!-- Search Form -->
-      <form id="gemSearchForm" class="flex items-center bg-white rounded-3xl overflow-hidden shadow-lg h-10">
-        <!-- Search Input -->
-        <input type="text" id="searchInput" placeholder="Looking for something on GeM?"
-          class="w-full px-4 py-3 text-gray-800 text-sm focus:outline-none" required />
+  <!-- Hero Search Input Section -->
+  <section class="py-3 px-4 max-w-3xl mx-auto">
+    <form id="gemSearchForm" class="flex items-center bg-white rounded-full overflow-hidden shadow-md h-10 w-full">
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Looking for something on GeM?" 
+        class="w-full px-5 py-2 text-gray-800 text-xs sm:text-sm focus:outline-none placeholder:text-gray-400" 
+        required 
+      />
+      <button 
+        type="submit" 
+        class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-5 h-full flex items-center justify-center transition shrink-0"
+        aria-label="Search"
+      >
+        <span class="hidden sm:inline-block ml-1.5 text-xs uppercase tracking-wide">Search</span>
+      </button>
+    </form>
+  </section>
 
-        <!-- Submit Button -->
-        <button type="submit"
-          class="bg-yellow-500 hover:bg-yellow-600 text-black px-6 text-sm font-semibold flex items-center justify-center transition h-14">
-          <i class="fa-solid fa-magnifying-glass mr-1"></i>
-          <span class="hidden sm:inline">Search</span>
-        </button>
-      </form>
-    </div>
-    <section class="bg-transparent rounded-xl  px-4 sm:px-8 overflow-hidden w-full max-w-7xl mx-auto my-4">
-  <div class="flex items-center ">
-    <div class="relative w-full overflow-hidden flex items-center ">
-      <div id="marquee-content" class="inline-flex items-center gap-3 whitespace-nowrap text-xs sm:text-sm animate-[marquee_12s_linear_infinite] hover:[animation-play-state:paused] transition-opacity duration-300">
-        <span id="notice-tag" class="bg-amber-500 text-slate-900 font-bold text-xs px-2 py-0.5 rounded uppercase shrink-0">
-          Notice
+  <!-- Notice Marquee Bar -->
+  <section class="bg-slate-950 py-1.5 px-4 w-full">
+    <div class="max-w-7xl mx-auto flex items-center overflow-hidden text-xs">
+      <div id="marquee-content" class="inline-flex items-center gap-3 whitespace-nowrap animate-[marquee_14s_linear_infinite] hover:[animation-play-state:paused]">
+        <span id="notice-tag" class="bg-amber-500 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded uppercase shrink-0">
+          NOTICE
         </span>
-        <span id="notice-desc" class="text-slate-200  shrink-0">
+        <span id="notice-desc" class="text-slate-300 shrink-0 text-xs">
           GeM portal maintenance scheduled for this Sunday from 4 AM to 6 AM.
         </span>
       </div>
     </div>
-  </div>
-</section>
   </section>
-  
-  </header>
+
+</header>
   <div id="main-content" class="grid w-full bg-white text-white min-h-screen">
     <!-- Dynamic content render here -->
 

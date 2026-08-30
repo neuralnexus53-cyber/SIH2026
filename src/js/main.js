@@ -450,17 +450,17 @@ const initiatives = {
 
 // 1. Initiatives Component
 const createInitiativesSection = () => `
-  <div class="flex flex-col text-left">
+  <div class="flex flex-col text-left h-full">
     <!-- Section Title -->
-    <h2 class="text-xl sm:text-2xl font-semibold text-slate-800 mb-4 px-2">
+    <h2 class="text-xl sm:text-2xl font-normal text-slate-700 mb-4 px-1">
       Initiatives
     </h2>
 
     <!-- Main Card Container -->
-    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-slate-100 flex flex-col gap-4 flex-1">
+    <div class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 shadow-xs flex flex-col justify-between flex-1">
       
       <!-- Top Main Banner Box -->
-      <div class="w-full bg-slate-50 border border-slate-200 rounded-lg overflow-hidden cursor-pointer group flex items-center justify-center">
+      <div class="w-full bg-slate-50 border border-slate-200 rounded-lg overflow-hidden cursor-pointer group mb-4">
         <img 
           src="${initiatives.mainBanner}" 
           alt="Main Initiative Banner" 
@@ -468,10 +468,10 @@ const createInitiativesSection = () => `
         />
       </div>
 
-      <!-- Bottom 2 Side-by-Side Boxes -->
+      <!-- Bottom 2 Side-by-Side Banners -->
       <div class="grid grid-cols-2 gap-4">
         ${initiatives.subBanners.map((imgSrc, idx) => `
-          <div class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden h-28 sm:h-36 cursor-pointer group flex items-center justify-center">
+          <div class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden cursor-pointer group flex items-center justify-center">
             <img 
               src="${imgSrc}" 
               alt="Initiative ${idx + 1}" 
@@ -487,9 +487,9 @@ const createInitiativesSection = () => `
     <div class="flex justify-center mt-6">
       <a 
         href="#" 
-        class="w-full max-w-xs py-3 px-6 rounded-full bg-gradient-to-r from-orange-500 to-amber-400 text-white font-bold text-sm uppercase tracking-wider text-center shadow-md hover:opacity-95 transition-opacity"
+        class="w-full max-w-xs py-3 px-6 rounded-full bg-gradient-to-r from-orange-500 to-amber-400 text-white font-bold text-xs sm:text-sm uppercase tracking-wider text-center shadow-md hover:opacity-95 transition-opacity"
       >
-        View All Initiatives
+        VIEW ALL INITIATIVES
       </a>
     </div>
   </div>
@@ -497,70 +497,72 @@ const createInitiativesSection = () => `
 
 // 2. GeM Connect Component
 const createGemConnectSection = () => `
-  <div class="flex flex-col text-left">
+  <div class="flex flex-col text-left h-full">
     <!-- Section Title -->
-    <h2 class="text-xl sm:text-2xl font-semibold text-slate-800 mb-4 px-2">
+    <h2 class="text-xl sm:text-2xl font-normal text-slate-700 mb-4 px-1">
       GeM Connect
     </h2>
 
     <!-- Main Card Container -->
-    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-slate-100 flex flex-col gap-4 flex-1">
+    <div class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 shadow-xs flex flex-col justify-between flex-1">
       
-      <!-- Social Media Tabs -->
-      <div class="flex items-center gap-6 border-b border-slate-200 pb-2">
-        <button class="relative pb-2 flex items-center justify-center cursor-pointer">
-          <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center border border-slate-300">
-            <span class="font-bold text-slate-800 text-sm">𝕏</span>
-          </div>
-          <span class="absolute bottom-0 left-0 w-full h-[3px] bg-pink-700 rounded-full"></span>
-        </button>
-
-        <button class="relative pb-2 flex items-center justify-center cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
-          <div class="w-8 h-8 rounded-full bg-[#1877f2] flex items-center justify-center text-white font-bold text-sm">
-            f
-          </div>
-        </button>
-      </div>
-
-      <!-- Social Feed Card -->
-      <div class="border border-slate-200 rounded-xl p-4 bg-white flex flex-col gap-3">
-        
-        <!-- Post Header -->
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <div class="w-9 h-9 rounded-full overflow-hidden bg-slate-100 border border-slate-200">
-              <img src="./src/components/img/gem_logo.png" alt="GeM Logo" class="w-full h-full object-contain" />
+      <div>
+        <!-- Social Media Tabs -->
+        <div class="flex items-center gap-6 border-b border-slate-200 pb-2 mb-4">
+          <button class="relative pb-2 flex items-center justify-center cursor-pointer">
+            <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center border border-slate-300">
+              <span class="font-bold text-slate-800 text-sm">𝕏</span>
             </div>
-            <div class="flex flex-col">
-              <div class="flex items-center gap-1">
-                <span class="font-bold text-sm text-slate-900">GeM</span>
-                <svg class="w-4 h-4 text-sky-500 fill-current" viewBox="0 0 24 24">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-                </svg>
+            <span class="absolute bottom-0 left-0 w-full h-[3px] bg-red-600 rounded-full"></span>
+          </button>
+
+          <button class="relative pb-2 flex items-center justify-center cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
+            <div class="w-8 h-8 rounded-full bg-[#1877f2] flex items-center justify-center text-white font-bold text-sm">
+              f
+            </div>
+          </button>
+        </div>
+
+        <!-- Social Feed Card -->
+        <div class="border border-slate-200 rounded-xl p-4 bg-white flex flex-col gap-3">
+          
+          <!-- Post Header -->
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full overflow-hidden bg-slate-100 border border-slate-200 flex-shrink-0">
+                <img src="./src/components/img/gem_logo.png" alt="GeM Logo" class="w-full h-full object-contain" />
               </div>
-              <span class="text-xs text-slate-500">@GeM_India · <a href="#" class="text-sky-600 hover:underline">Follow</a></span>
+              <div class="flex flex-col">
+                <div class="flex items-center gap-1">
+                  <span class="font-bold text-sm text-slate-900">GeM</span>
+                  <svg class="w-4 h-4 text-sky-500 fill-current" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </div>
+                <span class="text-xs text-slate-500">@GeM_India · <a href="#" class="text-sky-600 hover:underline">Follow</a></span>
+              </div>
             </div>
+            <span class="text-base font-bold text-slate-800">𝕏</span>
           </div>
-          <span class="text-lg font-bold text-slate-800">𝕏</span>
-        </div>
 
-        <!-- Post Body -->
-        <div class="text-xs sm:text-sm text-slate-800 leading-relaxed space-y-2">
-          <p>जेम के साप्ताहिक <a href="#" class="text-sky-600 hover:underline">#TrainingCalendar</a> से लाभ उठाएं!</p>
-          <p>
-            चाहे आप Buyer हों या Seller, GeM पर आपकी ज़रूरतों को ध्यान में रखते हुए Free Online Training Sessions उपलब्ध हैं। Experts के सेशन से जुड़ें और जानें कि GeM का smart और effective उपयोग कैसे करें। पूरा Schedule देखने और WebEx link 
-            <a href="#" class="text-sky-600 hover:underline font-semibold">Show more</a>
-          </p>
-        </div>
+          <!-- Post Body -->
+          <div class="text-xs sm:text-sm text-slate-800 leading-relaxed space-y-2">
+            <p>जेम के साप्ताहिक <a href="#" class="text-sky-600 hover:underline">#TrainingCalendar</a> से लाभ उठाएं!</p>
+            <p>
+              चाहे आप Buyer हों या Seller, GeM पर आपकी ज़रूरतों को ध्यान में रखते हुए Free Online Training Sessions उपलब्ध हैं। Experts के सेशन से जुड़ें और जानें कि GeM का smart और effective उपयोग कैसे करें। पूरा Schedule देखने और WebEx link 
+              <a href="#" class="text-sky-600 hover:underline font-semibold">Show more</a>
+            </p>
+          </div>
 
-        <!-- Embedded Card -->
-        <div class="relative mt-2 border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-4">
-          <img src="./src/components/img/embbed_card.png" alt="Training Announcement" class="w-full h-auto object-cover rounded-md" />
-          <a href="#" class="absolute bottom-3 right-3 bg-slate-900/90 text-white text-xs px-3 py-1.5 rounded-full font-medium flex items-center gap-1 hover:bg-black transition-colors shadow-md">
-            Watch on 𝕏
-          </a>
-        </div>
+          <!-- Embedded Card -->
+          <div class="relative mt-2 border border-slate-200 rounded-lg overflow-hidden bg-slate-50 p-3">
+            <img src="./src/components/img/embbed_card.png" alt="Training Announcement" class="w-full h-auto object-cover rounded-md" />
+            <a href="#" class="absolute bottom-3 right-3 bg-slate-900/90 text-white text-xs px-3 py-1.5 rounded-full font-medium flex items-center gap-1 hover:bg-black transition-colors shadow-md">
+              Watch on 𝕏
+            </a>
+          </div>
 
+        </div>
       </div>
 
     </div>
@@ -569,18 +571,18 @@ const createGemConnectSection = () => `
     <div class="flex justify-center mt-6">
       <a 
         href="#" 
-        class="w-full max-w-xs py-3 px-6 rounded-full bg-gradient-to-r from-orange-500 to-amber-400 text-white font-bold text-sm uppercase tracking-wider text-center shadow-md hover:opacity-95 transition-opacity"
+        class="w-full max-w-xs py-3 px-6 rounded-full bg-gradient-to-r from-orange-500 to-amber-400 text-white font-bold text-xs sm:text-sm uppercase tracking-wider text-center shadow-md hover:opacity-95 transition-opacity"
       >
-        View All Notifications
+        VIEW ALL NOTIFICATIONS
       </a>
     </div>
   </div>
 `;
 
-// 3. Main Outer Layout Wrapper (Mobile: 1 column stacked, Laptop: 2 columns side-by-side)
+// 3. Main Outer Layout Wrapper
 const createMainMiddleSection = () => `
-  <section class="py-6 px-4 sm:px-8 max-w-xl lg:max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+  <section class="py-8 px-4 sm:px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
       ${createInitiativesSection()}
       ${createGemConnectSection()}
     </div>
