@@ -42,31 +42,6 @@ const startNoticeRotator = () => {
   requestAnimationFrame(step);
 };
 
-  const serviceCategories = [
-    { name: "Security Manpower", desc: "Trained personnel for commercial & govt security." },
-    { name: "Catering", desc: "Event & daily food services for organizations." },
-    { name: "Human Resource", desc: "Outsourced staffing & workforce support." },
-    { name: "Goods and Transport", desc: "Logistics and vehicle fleet services." }
-  ];
-
-  const stats = [
-    { label: "Product Categories", value: "10,650+" },
-    { label: "Order Value (Cr.)", value: "₹2,025,608" },
-    { label: "Service Categories", value: "349+" }
-  ];
-
-  const testimonials = [
-    {
-      quote: "The procurement process has become faster & prices are very competitive due to participation of more number of bidders.",
-      author: "Brig. Arvinder Singh, AVSM",
-      title: "Chief Engineer, Project Himank Leh"
-    },
-    {
-      quote: "It has been a very smooth association with GeM. I do hope they continue to offer us the same services in the future.",
-      author: "Gurkirat Kirpal Singh",
-      title: "IAS Secretary, Govt. of Punjab"
-    }
-  ];
 
 const stores = [
   { img: "./src/components/img/gemout1.jpeg" },
@@ -139,57 +114,233 @@ const createProductsSection = () => {
     </section>
   `;
 };
-  const createServicesSection = () => `
-    <section class="py-10 px-4 sm:px-8 max-w-7xl mx-auto">
-      <h2 class="text-xl sm:text-2xl font-bold text-white border-l-4 border-amber-500 pl-3 mb-6">
-        Popular Service Categories
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+const serviceCategories = [
+  { name: "Security Manpower", img: "./src/components/img/service1.jpeg" },
+  { name: "Catering", img: "./src/components/img/service2.jpeg" },
+  { name: "Human Resource", img: "./src/components/img/service3.jpeg" },
+  { name: "Goods and Transport Service", img: "./src/components/img/service4.jpeg" }
+];
+
+const createServicesSection = () => `
+ <section class="bg-gradient-to-b from-[#0b5cbe] from-70% to-transparent to-30% px-4 sm:px-8 max-w-7xl mx-auto py-4 text-center w-full">
+    
+    <!-- Title -->
+    <h2 class="text-xl sm:text-2xl font-bold text-white mb-6">
+      Popular Service Categories
+    </h2>
+
+    <!-- White Card Container -->
+    <div class="bg-white rounded-xl shadow-lg p-6 max-w-md mx-auto flex flex-col items-center">
+      
+      <!-- Services List (Vertical Stack / Grid) -->
+      <div class="w-full flex flex-col gap-6 mb-8">
         ${serviceCategories.map(service => `
-          <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-6 hover:border-amber-500/40 transition-all">
-            <h3 class="font-bold text-base text-white mb-2">${service.name}</h3>
-            <p class="text-xs text-slate-400 mb-4">${service.desc}</p>
-            <a href="#" class="text-xs text-amber-400 font-semibold hover:underline inline-flex items-center gap-1">
-              View Services &rarr;
-            </a>
-          </div>
-        `).join('')}
-      </div>
-    </section>
-  `;
-
-  const createStatsSection = () => `
-    <section class="bg-slate-900/60 border-y border-slate-800 py-12 px-4 sm:px-8 my-8">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        ${stats.map(stat => `
-          <div class="p-4">
-            <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-2">${stat.value}</div>
-            <div class="text-sm font-medium text-slate-400 uppercase tracking-widest">${stat.label}</div>
-          </div>
-        `).join('')}
-      </div>
-    </section>
-  `;
-
-  const createTestimonialsSection = () => `
-    <section class="py-12 px-4 sm:px-8 max-w-7xl mx-auto">
-      <h2 class="text-xl sm:text-2xl font-bold text-white text-center mb-10">
-        What Our Users Say
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        ${testimonials.map(item => `
-          <div class="bg-slate-800/60 border border-slate-700/80 rounded-2xl p-6 relative flex flex-col justify-between">
-            <p class="text-sm text-slate-300 italic mb-6">"${item.quote}"</p>
-            <div>
-              <h4 class="font-bold text-sm text-white">${item.author}</h4>
-              <p class="text-xs text-amber-400/90">${item.title}</p>
+          <div class="flex flex-col items-center justify-center cursor-pointer group">
+            <div class="w-16 h-16 mb-2 flex items-center justify-center">
+              <img src="${service.img}" alt="${service.name}" class="w-full h-full object-contain group-hover:scale-105 transition-transform" />
             </div>
+            <span class="text-sm font-semibold text-slate-800 text-center leading-tight">
+              ${service.name}
+            </span>
           </div>
         `).join('')}
       </div>
+
+      <!-- Orange Gradient Action Button -->
+      <a href="#" class="w-full max-w-xs py-3 px-6 rounded-full bg-gradient-to-r from-orange-500 to-amber-400 text-white font-bold text-sm uppercase tracking-wider shadow-md hover:opacity-95 transition-opacity">
+        View All Services
+      </a>
+
+    </div>
+  </section>
+`;
+
+ const stats = [
+  { value: "10,676", label: "Product Categories" },
+  { value: "2,028,454", label: "Order Value (Cr.)" },
+  { value: "349", label: "Service Categories" }
+];
+
+const gemFeatures = [
+  { 
+    label: "Rich Listing of<br>Products / Services", 
+    img: "./src/components/img/feature1.png" 
+  },
+  { 
+    label: "Integrated Payment<br>System", 
+    img: "./src/components/img/feature2.png" 
+  },
+  { 
+    label: "Multiple Procurement<br>Modes - Direct<br>Purchase / Bid / RA", 
+    img: "./src/components/img/feature3.png" 
+  },
+  { 
+    label: "Great Transparency<br>and Speed of<br>Procurement", 
+    img: "./src/components/img/feature4.png" 
+  }
+];
+
+const createStatsSection = () => `
+  <section class="bg-gradient-to-b from-[#ff512f] to-[#f09819] py-10 px-4 sm:px-8 text-center text-white w-full">
+    
+    <!-- Outer Heading -->
+    <h2 class="text-2xl sm:text-3xl font-medium mb-6">
+      Why you should choose GeM
+    </h2>
+
+    <!-- Inner Framed Border Container -->
+    <div class="border border-white/40 rounded-lg p-6 max-w-md mx-auto flex flex-col gap-6">
+      
+      <!-- Stats Numbers with Dividers -->
+      <div class="flex flex-col">
+        ${stats.map((stat, index) => `
+          <div class="py-4 ${index !== 0 ? 'border-t border-white/30' : ''}">
+            <div class="text-3xl sm:text-4xl font-semibold mb-1">${stat.value}</div>
+            <div class="text-sm font-normal text-white/90">${stat.label}</div>
+          </div>
+        `).join('')}
+      </div>
+
+      <!-- Feature List with Icons -->
+      <div class="flex flex-col gap-8 pt-4 border-t border-white/30">
+        ${gemFeatures.map(feature => `
+          <div class="flex flex-col items-center justify-center">
+            <div class="w-12 h-12 mb-2 flex items-center justify-center">
+              <img src="${feature.img}" alt="Feature Icon" class="w-full h-full object-contain filter brightness-0 invert" />
+            </div>
+            <span class="text-xs sm:text-sm text-center text-white/90 leading-snug">
+              ${feature.label}
+            </span>
+          </div>
+        `).join('')}
+      </div>
+
+    </div>
+  </section>
+`;
+
+const testimonials = [
+  {
+    quote: "जेम पोर्टल पर प्रोक्योरमेंट करने से हमें अच्छी क्वालिटी के उत्पाद सही समय पर और उचित दाम पर उपलब्ध हुए है जिससे हम अपने बजट में बचाव संभव हो पाई।",
+    author: "श्री विजय जोगदंड",
+    title: "अधिशासी अभियन्ता (सिविल) एक सीमा सड़क संगठन के सड़क निर्माण कंपनी के कमान्डिंग अधिकारी जैसलमेर, राजस्थान",
+    img: "./src/components/img/user1.png"
+  },
+  {
+    quote: "GeM has made public procurement completely transparent and efficient for our division.",
+    author: "Shri Rajesh Kumar",
+    title: "Executive Engineer, CPWD",
+    img: "./src/components/img/user2.png"
+  }
+];
+const initTestimonialCarousel = () => {
+  const track = document.getElementById('testimonial-track');
+  const card = document.getElementById('testimonial-card');
+  const dotsContainer = document.getElementById('testimonial-dots');
+
+  if (!track || !card || !dotsContainer) return;
+
+  const dots = dotsContainer.querySelectorAll('.dot-btn');
+  let currentIndex = 0;
+  let intervalId = null;
+  const totalSlides = testimonials.length;
+
+  const goToSlide = (index) => {
+    currentIndex = index;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    dots.forEach((dot, idx) => {
+      if (idx === currentIndex) {
+        dot.classList.add('bg-orange-500', 'scale-110');
+        dot.classList.remove('bg-transparent');
+      } else {
+        dot.classList.remove('bg-orange-500', 'scale-110');
+        dot.classList.add('bg-transparent');
+      }
+    });
+  };
+
+  const startAutoSlide = () => {
+    if (!intervalId) {
+      intervalId = setInterval(() => {
+        const nextIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(nextIndex);
+      }, 5000);
+    }
+  };
+
+  const stopAutoSlide = () => {
+    clearInterval(intervalId);
+    intervalId = null;
+  };
+
+  // Click handler for dots
+  dotsContainer.addEventListener('click', (e) => {
+    const dot = e.target.closest('.dot-btn');
+    if (!dot) return;
+
+    const targetIndex = parseInt(dot.getAttribute('data-index'));
+    goToSlide(targetIndex);
+
+    stopAutoSlide();
+    startAutoSlide();
+  });
+
+  // Pause on hover/touch
+  card.addEventListener('mouseenter', stopAutoSlide);
+  card.addEventListener('mouseleave', startAutoSlide);
+  card.addEventListener('touchstart', stopAutoSlide, { passive: true });
+  card.addEventListener('touchend', startAutoSlide);
+
+  startAutoSlide();
+};
+
+// 3. HTML Component Generator with Auto-Init Script
+const createTestimonialsSection = () => {
+  // Auto-run carousel logic right after DOM updates
+  setTimeout(initTestimonialCarousel, 50);
+
+  return `
+    <section class="relative -mt-16 z-10 px-4 sm:px-8 max-w-xl mx-auto mb-10">
+      <!-- Main Card Container -->
+      <div id="testimonial-card" class="bg-white rounded-xl shadow-xl p-6 sm:p-8 text-center border border-slate-100 overflow-hidden">
+        
+        <h2 class="text-xl sm:text-2xl font-semibold text-slate-800 mb-6">
+          Customers Speak
+        </h2>
+
+        <!-- Sliding Track Container -->
+        <div class="relative overflow-hidden w-full">
+          <div id="testimonial-track" class="flex transition-transform duration-500 ease-in-out w-full">
+            ${testimonials.map(item => `
+              <div class="w-full flex-shrink-0 flex flex-col items-center justify-center px-2">
+                <p class="text-sm sm:text-base text-slate-700 font-medium leading-relaxed mb-6 max-w-md">
+                  “${item.quote}”
+                </p>
+                
+                <div class="w-16 h-16 rounded-full overflow-hidden mb-3 border-2 border-slate-200">
+                  <img src="${item.img}" alt="${item.author}" class="w-full h-full object-cover" />
+                </div>
+
+                <h4 class="font-bold text-base text-slate-900 mb-1">${item.author}</h4>
+                <p class="text-xs text-slate-500 max-w-xs leading-tight mb-4">${item.title}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Pagination Dots -->
+        <div id="testimonial-dots" class="flex justify-center items-center gap-2 mt-4">
+          ${testimonials.map((_, i) => `
+            <button data-index="${i}" class="dot-btn w-3 h-3 rounded-full border border-orange-400 ${i === 0 ? 'bg-orange-500 scale-110' : 'bg-transparent'} transition-all cursor-pointer"></button>
+          `).join('')}
+        </div>
+
+      </div>
     </section>
   `;
-
+};
   // Render function (Notice section call removed)
   const renderHomePage = () => {
     const container = document.getElementById("main-content");
