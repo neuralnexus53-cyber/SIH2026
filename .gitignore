@@ -23,3 +23,7 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+# Generated frontend assets
+dist/output.css
+dist/**/*.css
+
