@@ -26,4 +26,3 @@ TestResults.xml
 # Generated frontend assets
 dist/output.css
 dist/**/*.css
-
