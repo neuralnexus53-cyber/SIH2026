@@ -81,18 +81,61 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
 
   // Section Builder: Top Notice Banner
-  const createNoticeSection = () => `
-    <section class="bg-blue-950/80 border-b border-blue-800 py-3 px-4 sm:px-8">
-      <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
-        <div class="flex items-center gap-3 overflow-hidden text-ellipsis whitespace-nowrap text-xs sm:text-sm">
-          <span class="bg-amber-500 text-slate-900 font-bold text-xs px-2 py-0.5 rounded uppercase">
+ // Sample data array
+const bannerAlerts = [
+  { tag: "Notice", desc: "GeM portal maintenance scheduled for this Sunday from 2 AM to 6 AM." },
+  { tag: "Update", desc: "New seller registration guidelines have been updated for 2026." },
+  { tag: "Alert", desc: "Please complete your profile verification before the end of the month." }
+];
+
+let currentAlertIndex = 0;
+
+const createNoticeSection = () => `
+  <section class="bg-blue-950/80 border-b border-blue-800 py-3 px-4 sm:px-8 overflow-hidden">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      
+      <!-- Container -->
+      <div class="relative w-full overflow-hidden flex items-center h-6">
+        <div 
+          id="marquee-content" 
+          class="inline-flex items-center gap-3 whitespace-nowrap text-xs sm:text-sm transition-all duration-300 hover:[animation-play-state:paused]"
+        >
+          <span id="notice-tag" class="bg-amber-500 text-slate-900 font-bold text-xs px-2 py-0.5 rounded uppercase shrink-0">
             ${bannerAlerts[0].tag}
           </span>
-          <span class="text-slate-200">${bannerAlerts[0].desc}</span>
+          <span id="notice-desc" class="text-slate-200 shrink-0">
+            ${bannerAlerts[0].desc}
+          </span>
         </div>
       </div>
-    </section>
-  `;
+
+    </div>
+  </section>
+`;
+
+// Dynamic Switcher Logic
+const startNoticeRotator = (intervalMs = 8000) => {
+  const tagEl = document.getElementById('notice-tag');
+  const descEl = document.getElementById('notice-desc');
+  const container = document.getElementById('marquee-content');
+
+  if (!tagEl || !descEl || !container) return;
+
+  setInterval(() => {
+    // Fade out slightly during text swap
+    container.classList.add('opacity-0');
+
+    setTimeout(() => {
+      currentAlertIndex = (currentAlertIndex + 1) % bannerAlerts.length;
+      
+      tagEl.textContent = bannerAlerts[currentAlertIndex].tag;
+      descEl.textContent = bannerAlerts[currentAlertIndex].desc;
+      
+      container.classList.remove('opacity-0');
+    }, 300);
+
+  }, intervalMs);
+};
 
   // Section Builder: GeM Outlet Stores
   const createOutletStoresSection = () => `
@@ -102,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-slate-300/10 p-6 rounded-xl border border-slate-700/50 h-full">
       <div class="h-28 bg-white mb-4 border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 text-black transition-colors cursor-pointer">
-      here image will come 1
+      <img src="" alt="GeM Logo" class="h-10 w-auto mx-auto" />
       </div>
       <div class="h-28 bg-white mb-4 text-black border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 transition-colors cursor-pointer">
       here image will come 2
