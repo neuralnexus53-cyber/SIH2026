@@ -33,18 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. DATA CONFIGURATION (EDIT CONTENT HERE)
   // ==========================================
 
-  // Banner Slides / Highlights
-  const bannerAlerts = [
-    {
-      title: "GeM 10 Years of Trust",
-      desc: "Bid/RA scheduled to end on 22nd Aug have been extended. GeM is linked with TReDS Exchanges for MSME financing.",
-      tag: "Notice"
-    }
-  ];
+ 
 
-  // Outlet Stores Grid
-
-  // Popular Product Categories
 
 
   // Popular Service Categories
@@ -90,28 +80,6 @@ const bannerAlerts = [
 
 let currentAlertIndex = 0;
 
-const createNoticeSection = () => `
-  <section class="bg-blue-950/80 border-b border-blue-800 py-3 px-4 sm:px-8 overflow-hidden">
-    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
-      
-      <!-- Container -->
-      <div class="relative w-full overflow-hidden flex items-center h-6">
-        <div 
-          id="marquee-content" 
-          class="inline-flex items-center gap-3 whitespace-nowrap text-xs sm:text-sm transition-all duration-300 hover:[animation-play-state:paused]"
-        >
-          <span id="notice-tag" class="bg-amber-500 text-slate-900 font-bold text-xs px-2 py-0.5 rounded uppercase shrink-0">
-            ${bannerAlerts[0].tag}
-          </span>
-          <span id="notice-desc" class="text-slate-200 shrink-0">
-            ${bannerAlerts[0].desc}
-          </span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-`;
 
 // Dynamic Switcher Logic
 const startNoticeRotator = (intervalMs = 8000) => {
