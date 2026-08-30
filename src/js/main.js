@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const query = searchInput.value.trim();
       const category = searchCategory.value;
-      
+
       if (query) {
         alert(`Searching for "${query}" in category: ${category}`);
       }
@@ -43,9 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   // Outlet Stores Grid
-  
+
   // Popular Product Categories
-  
+
 
   // Popular Service Categories
   const serviceCategories = [
