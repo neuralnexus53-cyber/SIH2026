@@ -1,43 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const searchForm = document.getElementById('gemSearchForm');
-  const searchInput = document.getElementById('searchInput');
-  const searchCategory = document.getElementById('searchCategory');
-  const languageSelect = document.getElementById('languageSelect');
+  // Data Array (Updating this updates the HTML automatically via JS rotator)
+  const bannerAlerts = [
+    { tag: "Notice", desc: "GeM portal maintenance scheduled for this Sunday from 2 AM to 6 AM." },
+    { tag: "Update", desc: "New seller registration guidelines have been updated for 2026." },
+    { tag: "Alert", desc: "Please complete your profile verification before the end of the month." }
+  ];
 
-  // Handle Search Submission
-  if (searchForm) {
-    searchForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const query = searchInput.value.trim();
-      const category = searchCategory.value;
+  let currentAlertIndex = 0;
 
-      if (query) {
-        alert(`Searching for "${query}" in category: ${category}`);
-      }
-    });
+
+
+  // Rotator attached to static HTML IDs
+const startNoticeRotator = () => {
+  const container = document.getElementById('marquee-content');
+  const parent = container?.parentElement;
+  const tagEl = document.getElementById('notice-tag');
+  const descEl = document.getElementById('notice-desc');
+
+  if (!container || !parent || !tagEl || !descEl) return;
+
+  let currentX = parent.clientWidth;
+  const speed = 1.5; // Change speed (pixels per frame)
+
+  function step() {
+    currentX -= speed;
+
+    // Reset when text scrolls completely off the left edge
+    if (currentX < -container.clientWidth) {
+      currentX = parent.clientWidth;
+
+      // Update alert text seamlessly on each loop reset
+      currentAlertIndex = (currentAlertIndex + 1) % bannerAlerts.length;
+      tagEl.textContent = bannerAlerts[currentAlertIndex].tag;
+      descEl.textContent = bannerAlerts[currentAlertIndex].desc;
+    }
+
+    container.style.transform = `translateX(${currentX}px)`;
+    requestAnimationFrame(step);
   }
 
-  // Handle Language Selector Change
-  if (languageSelect) {
-    languageSelect.addEventListener('change', (e) => {
-      const selectedLang = e.target.value;
-      console.log(`Language changed to: ${selectedLang}`);
-    });
-  }
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("main-content");
-  if (!container) return;
+  requestAnimationFrame(step);
+};
 
-  // ==========================================
-  // 1. DATA CONFIGURATION (EDIT CONTENT HERE)
-  // ==========================================
-
- 
-
-
-
-  // Popular Service Categories
   const serviceCategories = [
     { name: "Security Manpower", desc: "Trained personnel for commercial & govt security." },
     { name: "Catering", desc: "Event & daily food services for organizations." },
@@ -45,14 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Goods and Transport", desc: "Logistics and vehicle fleet services." }
   ];
 
-  // Platform Metrics
   const stats = [
     { label: "Product Categories", value: "10,650+" },
     { label: "Order Value (Cr.)", value: "₹2,025,608" },
     { label: "Service Categories", value: "349+" }
   ];
 
-  // Testimonials
   const testimonials = [
     {
       quote: "The procurement process has become faster & prices are very competitive due to participation of more number of bidders.",
@@ -66,117 +68,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-  // ==========================================
-  // 2. COMPONENT BUILDERS (UI GENERATORS)
-  // ==========================================
-
-  // Section Builder: Top Notice Banner
- // Sample data array
-const bannerAlerts = [
-  { tag: "Notice", desc: "GeM portal maintenance scheduled for this Sunday from 2 AM to 6 AM." },
-  { tag: "Update", desc: "New seller registration guidelines have been updated for 2026." },
-  { tag: "Alert", desc: "Please complete your profile verification before the end of the month." }
-];
-
-let currentAlertIndex = 0;
-
-
-// Dynamic Switcher Logic
-const startNoticeRotator = (intervalMs = 8000) => {
-  const tagEl = document.getElementById('notice-tag');
-  const descEl = document.getElementById('notice-desc');
-  const container = document.getElementById('marquee-content');
-
-  if (!tagEl || !descEl || !container) return;
-
-  setInterval(() => {
-    // Fade out slightly during text swap
-    container.classList.add('opacity-0');
-
-    setTimeout(() => {
-      currentAlertIndex = (currentAlertIndex + 1) % bannerAlerts.length;
+  const createOutletStoresSection = () => {
+    return `
+      <section class="bg-slate-900/80 border-b border-slate-700  px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <h2 class="text-lg sm:text-xl font-bold text-white border-l-4 border-amber-500 pl-3">
+            GeM Outlet Stores
+          </h2>
+        </div>
+      </section>
       
-      tagEl.textContent = bannerAlerts[currentAlertIndex].tag;
-      descEl.textContent = bannerAlerts[currentAlertIndex].desc;
-      
-      container.classList.remove('opacity-0');
-    }, 300);
+    `;
+  };
 
-  }, intervalMs);
-};
+  const createProductsSection = () => {
+    const products = [
+      "Desktops & Laptops", "Office Furniture", "Medical Equipment", 
+      "Automobiles", "Paper & Stationery", "Solar Energy"
+    ];
 
-  // Section Builder: GeM Outlet Stores
-  const createOutletStoresSection = () => `
-    <section class="py-10 px-4 sm:px-8 max-w-7xl mx-auto">
-      <h2 class="text-xl sm:text-2xl font-bold tracking-tight mb-6 text-white border-l-4 border-amber-500 pl-3">
-        GeM Outlet Stores-kishann
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-slate-300/10 p-6 rounded-xl border border-slate-700/50 h-full">
-      <div class="h-28 bg-white mb-4 border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 text-black transition-colors cursor-pointer">
-      <img src="" alt="GeM Logo" class="h-10 w-auto mx-auto" />
-      </div>
-      <div class="h-28 bg-white mb-4 text-black border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 transition-colors cursor-pointer">
-      here image will come 2
+    return `
+      <section class="py-10 px-4 sm:px-8 max-w-7xl mx-auto">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl sm:text-2xl font-bold text-white border-l-4 border-amber-500 pl-3">
+            Popular Product Categories
+          </h2>
+          <a href="#" class="text-xs font-semibold text-amber-400 hover:underline">Explore Market &rarr;</a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 p-4 bg-slate-900/80 rounded-xl border border-slate-700">
+          ${products.map(item => `
+            <div class="h-28 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg flex items-center justify-center p-4 cursor-pointer transition-colors">
+              <span class="text-sm font-semibold text-slate-200 text-center">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+    `;
+  };
 
-       </div>
-        <div class="h-28 bg-white mb-4 text-black border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 transition-colors cursor-pointer">
-      here immage will come 3
-      
-       </div>
-        <div class="h-28 bg-white mb-4 text-black border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 transition-colors cursor-pointer">
-      here immage will come 4
-      
-       </div>
-        <div class="h-28 bg-white mb-4 text-black border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 transition-colors cursor-pointer">
-      here immage will come 5
-      
-       </div>
-        <div class="h-28 bg-white mb-4 text-black border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 transition-colors cursor-pointer">
-      here immage will come 6
-      
-       </div>
-        <div class="h-28 bg-white mb-4 text-black border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 transition-colors cursor-pointer">
-      here immage will come 7
-      
-       </div>
-        <div class="h-28 bg-white mb-4 text-black border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 transition-colors cursor-pointer">
-      here immage will come 8
-      
-       </div>
-
-     
-      </div>
-      
-   
-      
-    </section>
-  `;
-
-  // Section Builder: Product Categories
-  const createProductsSection = () => `
-    <section class="py-10 px-4 sm:px-8 max-w-7xl mx-auto">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-xl sm:text-2xl font-bold text-white border-l-4 border-amber-500 pl-3">
-          Popular Product Categories
-        </h2>
-        <a href="#" class="text-xs font-semibold text-amber-400 hover:underline">Explore Market &rarr;</a>
-      </div>
-     
-    <div class="grid grid-cols-2 grid-rows-3 gap-4 p-4 bg-gray-500 rounded-xl">
-  <div class="h-28 max-w-full bg-black rounded-lg"></div>
-  <div class="h-28 max-w-full bg-black rounded-lg"></div>
-  <div class="h-28 max-w-full bg-black rounded-lg"></div>
-  <div class="h-28 max-w-full bg-black rounded-lg"></div>
-  <div class="h-28 max-w-full bg-black rounded-lg"></div>
-  <div class="h-28 max-w-full bg-black rounded-lg"></div>
-</div>
-      
-      
-       
-    </section>
-  `;
-
-  // Section Builder: Service Categories
   const createServicesSection = () => `
     <section class="py-10 px-4 sm:px-8 max-w-7xl mx-auto">
       <h2 class="text-xl sm:text-2xl font-bold text-white border-l-4 border-amber-500 pl-3 mb-6">
@@ -196,9 +125,8 @@ const startNoticeRotator = (intervalMs = 8000) => {
     </section>
   `;
 
-  // Section Builder: Platform Stats
   const createStatsSection = () => `
-    <section class="bg-slate-950/60 border-y border-slate-800 py-12 px-4 sm:px-8 my-8">
+    <section class="bg-slate-900/60 border-y border-slate-800 py-12 px-4 sm:px-8 my-8">
       <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
         ${stats.map(stat => `
           <div class="p-4">
@@ -210,7 +138,6 @@ const startNoticeRotator = (intervalMs = 8000) => {
     </section>
   `;
 
-  // Section Builder: Testimonials
   const createTestimonialsSection = () => `
     <section class="py-12 px-4 sm:px-8 max-w-7xl mx-auto">
       <h2 class="text-xl sm:text-2xl font-bold text-white text-center mb-10">
@@ -230,20 +157,22 @@ const startNoticeRotator = (intervalMs = 8000) => {
     </section>
   `;
 
-  // ==========================================
-  // 3. MAIN RENDER FUNCTION
-  // ==========================================
+  // Render function (Notice section call removed)
   const renderHomePage = () => {
+    const container = document.getElementById("main-content");
+    if (!container) return;
+
     container.innerHTML = `
-      ${createNoticeSection()}
       ${createOutletStoresSection()}
       ${createProductsSection()}
       ${createServicesSection()}
       ${createStatsSection()}
       ${createTestimonialsSection()}
     `;
+    
+    // Start updating static HTML banner automatically from JavaScript data
+    startNoticeRotator();
   };
 
-  // Run Render
   renderHomePage();
 });

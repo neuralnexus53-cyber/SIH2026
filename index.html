@@ -94,32 +94,24 @@
         </button>
       </form>
     </div>
-  </section>
-  
-    <section class="bg-transparent rounded-xl py-3 px-4 sm:px-8 overflow-hidden w-full">
-  <div class="max-w-7xl mx-auto flex items-center gap-4">
-  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
-    <div class="relative w-full overflow-hidden flex items-center h-6">
-      <div id="marquee-content" class="inline-flex items-center gap-3 whitespace-nowrap text-xs sm:text-sm animate-[marquee_12s_linear_infinite] hover:[animation-play-state:paused]">
+    <section class="bg-transparent rounded-xl  px-4 sm:px-8 overflow-hidden w-full max-w-7xl mx-auto my-4">
+  <div class="flex items-center ">
+    <div class="relative w-full overflow-hidden flex items-center ">
+      <div id="marquee-content" class="inline-flex items-center gap-3 whitespace-nowrap text-xs sm:text-sm animate-[marquee_12s_linear_infinite] hover:[animation-play-state:paused] transition-opacity duration-300">
         <span id="notice-tag" class="bg-amber-500 text-slate-900 font-bold text-xs px-2 py-0.5 rounded uppercase shrink-0">
           Notice
         </span>
-        <span id="notice-desc" class="text-slate-200 shrink-0">
-          GeM portal maintenance scheduled for this Sunday from 2 AM to 6 AM.
+        <span id="notice-desc" class="text-slate-200  shrink-0">
+          GeM portal maintenance scheduled for this Sunday from 4 AM to 6 AM.
         </span>
       </div>
     </div>
   </div>
 </section>
-
-<style>
-  @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-</style>
+  </section>
+  
   </header>
-  <div id="main-content" class="h-full w-full bg-slate-900 text-white min-h-screen">
+  <div id="main-content" class="grid w-full bg-slate-900 text-white min-h-screen">
     <!-- Dynamic content render here -->
 
   </div>
@@ -167,7 +159,7 @@
         </div>
 
         <!-- News & Events -->
-        <div class="flex gap-24 flex flex-col p-4 rounded-md">
+        <div class="flex gap-24 flex-col p-4 rounded-md">
           <h3 class="text-white  font-semibold mb-4 tracking-wide uppercase text-xs flex justify-center bg-white">News &
             Events</h3>
           <ul class="space-y-2 text-xs">
