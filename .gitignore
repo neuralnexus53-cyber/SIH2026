@@ -23,3 +23,5 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+# Compiled Tailwind CSS
+dist/output.css
