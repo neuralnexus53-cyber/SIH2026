@@ -98,14 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const createOutletStoresSection = () => `
     <section class="py-10 px-4 sm:px-8 max-w-7xl mx-auto">
       <h2 class="text-xl sm:text-2xl font-bold tracking-tight mb-6 text-white border-l-4 border-amber-500 pl-3">
-        GeM Outlet Stores
+        GeM Outlet Stores-kishann
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-slate-300/10 p-6 rounded-xl border border-slate-700/50 h-full">
       <div class="h-28 bg-white mb-4 border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 text-black transition-colors cursor-pointer">
-      here immage will come 1
+      here image will come 1
       </div>
       <div class="h-28 bg-white mb-4 text-black border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 transition-colors cursor-pointer">
-      here immage will come 2
+      here image will come 2
 
        </div>
         <div class="h-28 bg-white mb-4 text-black border border-slate-700/60 rounded-lg p-4 text-center hover:bg-slate-800 transition-colors cursor-pointer">
