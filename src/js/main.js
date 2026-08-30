@@ -159,7 +159,6 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="h-28 max-w-full bg-black rounded-lg"></div>
   <div class="h-28 max-w-full bg-black rounded-lg"></div>
 </div>
-     </div>
       
       
        
