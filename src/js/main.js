@@ -68,19 +68,41 @@ const startNoticeRotator = () => {
     }
   ];
 
-  const createOutletStoresSection = () => {
-    return `
-      <section class="bg-slate-900/80 border-b border-slate-700  px-4 sm:px-8">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-          <h2 class="text-lg sm:text-xl font-bold text-white border-l-4 border-amber-500 pl-3">
-            GeM Outlet Stores
-          </h2>
-        </div>
-      </section>
-      
-    `;
-  };
+const stores = [
+  { img: "./src/components/img/gemout1.jpeg" },
+  { img: "./src/components/img/gemout2.jpeg" },
+  { img: "./src/components/img/gemout3.jpeg" },
+  { img: "./src/components/img/zemout4.jpeg" },
+  { img: "./src/components/img/zemout5.jpeg" },
+  { img: "./src/components/img/zemout6.jpeg" },
+  { img: "./src/components/img/zemout7.jpeg" },
+  { img: "./src/components/img/zemout8.jpeg" }
+];
 
+const createOutletStoresSection = () => {
+  return `
+    <section class="bg-slate-900/80 border-b border-slate-700 px-4 sm:px-8 py-6">
+     
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 bg-white rounded-xl border border-slate-700">
+      
+       <div class="max-w-7xl mx-auto flex flex-direction-row items-center justify-between gap-4 mb-4 sm:mb-6">
+       <h1 class="text-lg sm:text-3xl font-bold text-violet-950">
+         #VOCALforlocal
+       </h1>
+        <h2 class="text-lg sm:text-xl font-bold text-violet-950">
+          GeM Outlet Stores
+        </h2>
+      </div>
+        ${stores.map(store => `
+          <div class="h-28 bg-slate-800 border border-slate-700 hover:border-amber-500 rounded-lg transition-all cursor-pointer overflow-hidden group relative">
+            <img src="${store.img}" alt="Store Outlet" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+          </div>
+        `).join('')}
+      </div>
+    </section>
+  `;
+};
   const createProductsSection = () => {
     const products = [
       "Desktops & Laptops", "Office Furniture", "Medical Equipment", 
