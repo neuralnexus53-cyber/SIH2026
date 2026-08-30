@@ -14,12 +14,37 @@
 <body class="bg-gray-100 font-sans">
 
   <!-- Top Announcement Bar -->
-  <div class="bg-[#1e3a8a] text-white text-xs py-1 px-4 flex justify-between items-center">
+  <div class="bg-red-300 text-white text-xs py-1 px-4 flex justify-between items-center">
+     
     <div class="flex items-center space-x-4">
-      <a href="#" class="hover:underline"><i class="fa-solid fa-graduation-cap mr-1"></i> Interactive Training Courses <span class="bg-yellow-400 text-black text-[10px] px-1 font-bold rounded">NEW</span></a>
+       <!-- Logo Section -->
+      <div class="flex items-center space-x-3">
+        <div class="bg-white p-1 rounded">
+          <span class="text-[#0b2545] font-extrabold text-2xl tracking-tight">GeM</span>
+        </div>
+        <div class="border-l border-gray-500 pl-3">
+          <h1 class="text-sm font-bold leading-tight">Government e Marketplace</h1>
+          <p class="text-[10px] text-gray-300">Efficient • Transparent • Inclusive</p>
+        </div>
+      </div>
+      
+  <!-- Main Navigation Header -->
+  <header class="bg-[#0b2545] text-white">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-4">
+      <!-- Quick Action Buttons -->
+      <nav class="hidden md:flex items-center space-x-4 text-xs">
+        <a href="#" class="hover:text-yellow-400 font-semibold">Need Help?</a>
+        <a href="#" class="hover:text-yellow-400 font-semibold">Bids</a>
+        <a href="#" class="hover:text-yellow-400 font-semibold">RA</a>
+        <a href="#" class="hover:text-yellow-400 font-semibold">Sign Up</a>
+        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-3 py-1.5 rounded transition">Login</a>
+      </nav>
     </div>
-    <div class="flex items-center space-x-4">
-      <!-- Language Selector Dropdown -->
+  </header>
+
+  <!-- Navigation Menu Bar -->
+  <div class="bg-[#135b35] text-white text-sm border-t border-blue-900">
+       <!-- Language Selector Dropdown -->
       <div class="relative">
         <select id="languageSelect" class="bg-transparent border border-gray-400 rounded px-2 py-0.5 text-xs text-white cursor-pointer focus:outline-none focus:bg-[#1e3a8a]">
           <option value="en">English</option>
@@ -36,48 +61,25 @@
           <option value="te">తెలుగు</option>
         </select>
       </div>
-    </div>
-  </div>
-
-  <!-- Main Navigation Header -->
-  <header class="bg-[#0b2545] text-white">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-4">
-      
-      <!-- Logo Section -->
-      <div class="flex items-center space-x-3">
-        <div class="bg-white p-1 rounded">
-          <span class="text-[#0b2545] font-extrabold text-2xl tracking-tight">GeM</span>
-        </div>
-        <div class="border-l border-gray-500 pl-3">
-          <h1 class="text-sm font-bold leading-tight">Government e Marketplace</h1>
-          <p class="text-[10px] text-gray-300">Efficient • Transparent • Inclusive</p>
-        </div>
-      </div>
-
-      <!-- Quick Action Buttons -->
-      <nav class="hidden md:flex items-center space-x-4 text-xs">
-        <a href="#" class="hover:text-yellow-400 font-semibold">Need Help?</a>
-        <a href="#" class="hover:text-yellow-400 font-semibold">Bids</a>
-        <a href="#" class="hover:text-yellow-400 font-semibold">RA</a>
-        <a href="#" class="hover:text-yellow-400 font-semibold">Sign Up</a>
-        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-3 py-1.5 rounded transition">Login</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Navigation Menu Bar -->
-  <div class="bg-[#13325b] text-white text-sm border-t border-blue-900">
-    <div class="max-w-7xl mx-auto px-4 flex items-center space-x-6 overflow-x-auto py-2">
+       <div class="max-w-7xl mx-auto px-4 flex items-center space-x-6 overflow-x-auto py-2">
       <a href="#" class="hover:text-yellow-400 font-medium whitespace-nowrap">PRODUCTS</a>
       <a href="#" class="hover:text-yellow-400 font-medium whitespace-nowrap">SERVICES</a>
       <a href="#" class="hover:text-yellow-400 font-medium whitespace-nowrap">CONTENT</a>
       <a href="#" class="hover:text-yellow-400 font-medium whitespace-nowrap">BUSINESS OPPORTUNITIES</a>
+      <div class="flex items-center space-x-4">
+      <a href="#" class="hover:underline"><i class="fa-solid fa-graduation-cap mr-1"></i> Interactive Training Courses <span class="bg-yellow-400 text-black text-[10px] px-1 font-bold rounded">NEW</span></a>
     </div>
-  </div>
+    </div>
+    </div>
+  
+   
+ 
+   
 
   <!-- Search Bar Hero Section -->
   <section class="bg-[#0b2545] py-8 px-4 border-t border-blue-800">
     <div class="max-w-3xl mx-auto">
+ 
       <!-- Search Form -->
       <form id="gemSearchForm" class="flex items-center bg-white rounded-md overflow-hidden shadow-lg">
         <!-- Search Category Dropdown -->
