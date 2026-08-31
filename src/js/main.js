@@ -11,50 +11,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // Rotator attached to static HTML IDs
-const startNoticeRotator = () => {
-  const container = document.getElementById('marquee-content');
-  const parent = container?.parentElement;
-  const tagEl = document.getElementById('notice-tag');
-  const descEl = document.getElementById('notice-desc');
+  const startNoticeRotator = () => {
+    const container = document.getElementById('marquee-content');
+    const parent = container?.parentElement;
+    const tagEl = document.getElementById('notice-tag');
+    const descEl = document.getElementById('notice-desc');
 
-  if (!container || !parent || !tagEl || !descEl) return;
+    if (!container || !parent || !tagEl || !descEl) return;
 
-  let currentX = parent.clientWidth;
-  const speed = 1.5; // Change speed (pixels per frame)
+    let currentX = parent.clientWidth;
+    const speed = 1.5; // Change speed (pixels per frame)
 
-  function step() {
-    currentX -= speed;
+    function step() {
+      currentX -= speed;
 
-    // Reset when text scrolls completely off the left edge
-    if (currentX < -container.clientWidth) {
-      currentX = parent.clientWidth;
+      // Reset when text scrolls completely off the left edge
+      if (currentX < -container.clientWidth) {
+        currentX = parent.clientWidth;
 
-      // Update alert text seamlessly on each loop reset
-      currentAlertIndex = (currentAlertIndex + 1) % bannerAlerts.length;
-      tagEl.textContent = bannerAlerts[currentAlertIndex].tag;
-      descEl.textContent = bannerAlerts[currentAlertIndex].desc;
+        // Update alert text seamlessly on each loop reset
+        currentAlertIndex = (currentAlertIndex + 1) % bannerAlerts.length;
+        tagEl.textContent = bannerAlerts[currentAlertIndex].tag;
+        descEl.textContent = bannerAlerts[currentAlertIndex].desc;
+      }
+
+      container.style.transform = `translateX(${currentX}px)`;
+      requestAnimationFrame(step);
     }
 
-    container.style.transform = `translateX(${currentX}px)`;
     requestAnimationFrame(step);
-  }
+  };
 
-  requestAnimationFrame(step);
-};
+  const stores = [
+    { img: "./src/components/img/saras.jpeg", title: "The Saras Collection" },
+    { img: "./src/components/img/odop.jpeg", title: "ODOP" },
+    { img: "./src/components/img/startup.jpeg", title: "Startup Runway" },
+    { img: "./src/components/img/aabhar.jpeg", title: "The Aabhar Collection" },
+    { img: "./src/components/img/handicraft.jpeg", title: "Handicrafts" },
+    { img: "./src/components/img/handloom.jpeg", title: "Handloom" },
+    { img: "./src/components/img/womaniya.jpeg", title: "Womaniya" },
+    { img: "./src/components/img/millet.jpeg", title: "Millet Products" }
+  ];
 
-const stores = [
-  { img: "./src/components/img/saras.jpeg", title: "The Saras Collection" },
-  { img: "./src/components/img/odop.jpeg", title: "ODOP" },
-  { img: "./src/components/img/startup.jpeg", title: "Startup Runway" },
-  { img: "./src/components/img/aabhar.jpeg", title: "The Aabhar Collection" },
-  { img: "./src/components/img/handicraft.jpeg", title: "Handicrafts" },
-  { img: "./src/components/img/handloom.jpeg", title: "Handloom" },
-  { img: "./src/components/img/womaniya.jpeg", title: "Womaniya" },
-  { img: "./src/components/img/millet.jpeg", title: "Millet Products" }
-];
-
-const createOutletStoresSection = () => {
-  return `
+  const createOutletStoresSection = () => {
+    return `
     <section class="w-full bg-slate-100 py-8 px-4 sm:px-8">
       <div class="max-w-7xl mx-auto flex flex-col items-center">
         
@@ -84,73 +84,73 @@ const createOutletStoresSection = () => {
       </div>
     </section>
   `;
-};
-const createProductsSection = () => {
-  const categoryCards = [
-    {
-      title: "OXYGEN GAS & ACCESSORIES",
-      items: [
-        "Oxygen Concentrator",
-        "Oxygen Flow Meter",
-        "Compressed oxygen IS:309",
-        "O2 Gas Cylinders - Steel",
-        "HF Nasal O2 Therapy Unit"
-      ],
-      img: "./src/components/img/product1.jpeg"
-    },
-    {
-      title: "MEDICAL",
-      items: [
-        "Hand Sanitizer",
-        "Air Pollution Mask",
-        "Surgical Gloves",
-        "Covid-19 Kit for..."
-      ],
-      img: "./src/components/img/product2.jpeg"
-    },
-    {
-      title: "SARAS COLLECTION",
-      items: [
-        "Handicrafts",
-        "Handloom Texti..",
-        "Personal Care..",
-        "Accessories"
-      ],
-      img: "./src/components/img/product3.jpeg"
-    },
-    {
-      title: "FURNITURE",
-      items: [
-        "Office Chair",
-        "Computer Desk",
-        "Lounge Chair",
-        "Storage Rack"
-      ],
-      img: "./src/components/img/product4.jpeg"
-    },
-    {
-      title: "FIRE SAFETY",
-      items: [
-        "Fire Extinguishers",
-        "Sprinklers Smoke",
-        "Detectors Fire",
-        "Alarms"
-      ],
-      img: "./src/components/img/product5.jpeg"
-    },
-    {
-      title: "COMPUTERS",
-      items: [
-        "Desktop Computer",
-        "Computer Monitor",
-        "PC Software",
-        "Computer Printer"
-      ],
-      img: "./src/components/img/product6.jpeg"
-    }
-  ];
+  };
+  const createProductsSection = () => {
+    const categoryCards = [
+      {
+        title: "OXYGEN GAS & ACCESSORIES",
+        items: [
+          "Oxygen Concentrator",
+          "Oxygen Flow Meter",
+          "Compressed oxygen IS:309",
+          "O2 Gas Cylinders - Steel",
+          "HF Nasal O2 Therapy Unit"
+        ],
+        img: "./src/components/img/product1.jpeg"
+      },
+      {
+        title: "MEDICAL",
+        items: [
+          "Hand Sanitizer",
+          "Air Pollution Mask",
+          "Surgical Gloves",
+          "Covid-19 Kit for..."
+        ],
+        img: "./src/components/img/product2.jpeg"
+      },
+      {
+        title: "SARAS COLLECTION",
+        items: [
+          "Handicrafts",
+          "Handloom Texti..",
+          "Personal Care..",
+          "Accessories"
+        ],
+        img: "./src/components/img/product3.jpeg"
+      },
+      {
+        title: "FURNITURE",
+        items: [
+          "Office Chair",
+          "Computer Desk",
+          "Lounge Chair",
+          "Storage Rack"
+        ],
+        img: "./src/components/img/product4.jpeg"
+      },
+      {
+        title: "FIRE SAFETY",
+        items: [
+          "Fire Extinguishers",
+          "Sprinklers Smoke",
+          "Detectors Fire",
+          "Alarms"
+        ],
+        img: "./src/components/img/product5.jpeg"
+      },
+      {
+        title: "COMPUTERS",
+        items: [
+          "Desktop Computer",
+          "Computer Monitor",
+          "PC Software",
+          "Computer Printer"
+        ],
+        img: "./src/components/img/product6.jpeg"
+      }
+    ];
 
-  return `
+    return `
     <section class="w-full bg-slate-100 py-8 px-4 sm:px-8">
       <div class="max-w-7xl mx-auto flex flex-col items-center">
         
@@ -203,18 +203,18 @@ const createProductsSection = () => {
       </div>
     </section>
   `;
-};
+  };
 
 
-const serviceCategories = [
-  { name: "Security Manpower", img: "./src/components/img/security.png" },
-  { name: "Catering", img: "./src/components/img/catering.png" },
-  { name: "Human Resource", img: "./src/components/img/hr.png" },
-  { name: "Goods and Transport Service", img: "./src/components/img/transport.png" },
-  { name: "Vehicle Hiring", img: "./src/components/img/vehicle.png" }
-];
+  const serviceCategories = [
+    { name: "Security Manpower", img: "./src/components/img/security.png" },
+    { name: "Catering", img: "./src/components/img/catering.png" },
+    { name: "Human Resource", img: "./src/components/img/hr.png" },
+    { name: "Goods and Transport Service", img: "./src/components/img/transport.png" },
+    { name: "Vehicle Hiring", img: "./src/components/img/vehicle.png" }
+  ];
 
-const createServicesSection = () => `
+  const createServicesSection = () => `
   <section class="w-full bg-[#0b5cbe] pt-8 pb-16 px-4 sm:px-8 text-center">
     
     <!-- Title -->
@@ -251,32 +251,32 @@ const createServicesSection = () => `
     </div>
   </section>
 `;
- const stats = [
-  { value: "10,676", label: "Product Categories" },
-  { value: "2,028,454", label: "Order Value (Cr.)" },
-  { value: "349", label: "Service Categories" }
-];
+  const stats = [
+    { value: "10,676", label: "Product Categories" },
+    { value: "2,028,454", label: "Order Value (Cr.)" },
+    { value: "349", label: "Service Categories" }
+  ];
 
-const gemFeatures = [
-  { 
-    label: "Rich Listing of<br>Products / Services", 
-    img: "./src/components/img/feature1.png" 
-  },
-  { 
-    label: "Integrated Payment<br>System", 
-    img: "./src/components/img/feature2.png" 
-  },
-  { 
-    label: "Multiple Procurement<br>Modes - Direct<br>Purchase / Bid / RA", 
-    img: "./src/components/img/feature3.png" 
-  },
-  { 
-    label: "Great Transparency<br>and Speed of<br>Procurement", 
-    img: "./src/components/img/feature4.png" 
-  }
-];
+  const gemFeatures = [
+    {
+      label: "Rich Listing of<br>Products / Services",
+      img: "./src/components/img/feature1.png"
+    },
+    {
+      label: "Integrated Payment<br>System",
+      img: "./src/components/img/feature2.png"
+    },
+    {
+      label: "Multiple Procurement<br>Modes - Direct<br>Purchase / Bid / RA",
+      img: "./src/components/img/feature3.png"
+    },
+    {
+      label: "Great Transparency<br>and Speed of<br>Procurement",
+      img: "./src/components/img/feature4.png"
+    }
+  ];
 
-const createStatsSection = () => `
+  const createStatsSection = () => `
   <section class="bg-gradient-to-b from-[#ff512f] to-[#f09819] py-10 px-4 sm:px-8 text-center text-white w-full">
     
     <!-- Outer Heading -->
@@ -315,88 +315,88 @@ const createStatsSection = () => `
   </section>
 `;
 
-const testimonials = [
-  {
-    quote: "जेम पोर्टल पर प्रोक्योरमेंट करने से हमें अच्छी क्वालिटी के उत्पाद सही समय पर और उचित दाम पर उपलब्ध हुए है जिससे हम अपने बजट में बचाव संभव हो पाई।",
-    author: "श्री विजय जोगदंड",
-    title: "अधिशासी अभियन्ता (सिविल) एक सीमा सड़क संगठन के सड़क निर्माण कंपनी के कमान्डिंग अधिकारी जैसलमेर, राजस्थान",
-    img: "./src/components/img/user1.png"
-  },
-  {
-    quote: "GeM has made public procurement completely transparent and efficient for our division.",
-    author: "Shri Rajesh Kumar",
-    title: "Executive Engineer, CPWD",
-    img: "./src/components/img/user2.png"
-  }
-];
-const initTestimonialCarousel = () => {
-  const track = document.getElementById('testimonial-track');
-  const card = document.getElementById('testimonial-card');
-  const dotsContainer = document.getElementById('testimonial-dots');
-
-  if (!track || !card || !dotsContainer) return;
-
-  const dots = dotsContainer.querySelectorAll('.dot-btn');
-  let currentIndex = 0;
-  let intervalId = null;
-  const totalSlides = testimonials.length;
-
-  const goToSlide = (index) => {
-    currentIndex = index;
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-    dots.forEach((dot, idx) => {
-      if (idx === currentIndex) {
-        dot.classList.add('bg-orange-500', 'scale-110');
-        dot.classList.remove('bg-transparent');
-      } else {
-        dot.classList.remove('bg-orange-500', 'scale-110');
-        dot.classList.add('bg-transparent');
-      }
-    });
-  };
-
-  const startAutoSlide = () => {
-    if (!intervalId) {
-      intervalId = setInterval(() => {
-        const nextIndex = (currentIndex + 1) % totalSlides;
-        goToSlide(nextIndex);
-      }, 5000);
+  const testimonials = [
+    {
+      quote: "जेम पोर्टल पर प्रोक्योरमेंट करने से हमें अच्छी क्वालिटी के उत्पाद सही समय पर और उचित दाम पर उपलब्ध हुए है जिससे हम अपने बजट में बचाव संभव हो पाई।",
+      author: "श्री विजय जोगदंड",
+      title: "अधिशासी अभियन्ता (सिविल) एक सीमा सड़क संगठन के सड़क निर्माण कंपनी के कमान्डिंग अधिकारी जैसलमेर, राजस्थान",
+      img: "./src/components/img/user1.png"
+    },
+    {
+      quote: "GeM has made public procurement completely transparent and efficient for our division.",
+      author: "Shri Rajesh Kumar",
+      title: "Executive Engineer, CPWD",
+      img: "./src/components/img/user2.png"
     }
-  };
+  ];
+  const initTestimonialCarousel = () => {
+    const track = document.getElementById('testimonial-track');
+    const card = document.getElementById('testimonial-card');
+    const dotsContainer = document.getElementById('testimonial-dots');
 
-  const stopAutoSlide = () => {
-    clearInterval(intervalId);
-    intervalId = null;
-  };
+    if (!track || !card || !dotsContainer) return;
 
-  // Click handler for dots
-  dotsContainer.addEventListener('click', (e) => {
-    const dot = e.target.closest('.dot-btn');
-    if (!dot) return;
+    const dots = dotsContainer.querySelectorAll('.dot-btn');
+    let currentIndex = 0;
+    let intervalId = null;
+    const totalSlides = testimonials.length;
 
-    const targetIndex = parseInt(dot.getAttribute('data-index'));
-    goToSlide(targetIndex);
+    const goToSlide = (index) => {
+      currentIndex = index;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-    stopAutoSlide();
+      dots.forEach((dot, idx) => {
+        if (idx === currentIndex) {
+          dot.classList.add('bg-orange-500', 'scale-110');
+          dot.classList.remove('bg-transparent');
+        } else {
+          dot.classList.remove('bg-orange-500', 'scale-110');
+          dot.classList.add('bg-transparent');
+        }
+      });
+    };
+
+    const startAutoSlide = () => {
+      if (!intervalId) {
+        intervalId = setInterval(() => {
+          const nextIndex = (currentIndex + 1) % totalSlides;
+          goToSlide(nextIndex);
+        }, 5000);
+      }
+    };
+
+    const stopAutoSlide = () => {
+      clearInterval(intervalId);
+      intervalId = null;
+    };
+
+    // Click handler for dots
+    dotsContainer.addEventListener('click', (e) => {
+      const dot = e.target.closest('.dot-btn');
+      if (!dot) return;
+
+      const targetIndex = parseInt(dot.getAttribute('data-index'));
+      goToSlide(targetIndex);
+
+      stopAutoSlide();
+      startAutoSlide();
+    });
+
+    // Pause on hover/touch
+    card.addEventListener('mouseenter', stopAutoSlide);
+    card.addEventListener('mouseleave', startAutoSlide);
+    card.addEventListener('touchstart', stopAutoSlide, { passive: true });
+    card.addEventListener('touchend', startAutoSlide);
+
     startAutoSlide();
-  });
+  };
 
-  // Pause on hover/touch
-  card.addEventListener('mouseenter', stopAutoSlide);
-  card.addEventListener('mouseleave', startAutoSlide);
-  card.addEventListener('touchstart', stopAutoSlide, { passive: true });
-  card.addEventListener('touchend', startAutoSlide);
+  // 3. HTML Component Generator with Auto-Init Script
+  const createTestimonialsSection = () => {
+    // Auto-run carousel logic right after DOM updates
+    setTimeout(initTestimonialCarousel, 50);
 
-  startAutoSlide();
-};
-
-// 3. HTML Component Generator with Auto-Init Script
-const createTestimonialsSection = () => {
-  // Auto-run carousel logic right after DOM updates
-  setTimeout(initTestimonialCarousel, 50);
-
-  return `
+    return `
     <section class="relative -mt-16 z-10 px-4 sm:px-8 max-w-xl mx-auto mb-10">
       <!-- Main Card Container -->
       <div id="testimonial-card" class="bg-white rounded-xl shadow-xl p-6 sm:p-8 text-center border border-slate-100 overflow-hidden">
@@ -435,21 +435,21 @@ const createTestimonialsSection = () => {
       </div>
     </section>
   `;
-};
+  };
 
 
-// 1. Initiatives Component (Internal Mobile-Style Preserved)
-// Data for Initiatives Section
-const initiatives = {
-  mainBanner: "./src/components/img/init_main.jpeg",
-  subBanners: [
-    "./src/components/img/init_sub1.jpeg",
-    "./src/components/img/init_sub2.jpeg"
-  ]
-};
+  // 1. Initiatives Component (Internal Mobile-Style Preserved)
+  // Data for Initiatives Section
+  const initiatives = {
+    mainBanner: "./src/components/img/init_main.jpeg",
+    subBanners: [
+      "./src/components/img/init_sub1.jpeg",
+      "./src/components/img/init_sub2.jpeg"
+    ]
+  };
 
-// 1. Initiatives Component
-const createInitiativesSection = () => `
+  // 1. Initiatives Component
+  const createInitiativesSection = () => `
   <div class="flex flex-col text-left h-full">
     <!-- Section Title -->
     <h2 class="text-xl sm:text-2xl font-normal text-slate-700 mb-4 px-1">
@@ -495,8 +495,8 @@ const createInitiativesSection = () => `
   </div>
 `;
 
-// 2. GeM Connect Component
-const createGemConnectSection = () => `
+  // 2. GeM Connect Component
+  const createGemConnectSection = () => `
   <div class="flex flex-col text-left h-full">
     <!-- Section Title -->
     <h2 class="text-xl sm:text-2xl font-normal text-slate-700 mb-4 px-1">
@@ -579,8 +579,8 @@ const createGemConnectSection = () => `
   </div>
 `;
 
-// 3. Main Outer Layout Wrapper
-const createMainMiddleSection = () => `
+  // 3. Main Outer Layout Wrapper
+  const createMainMiddleSection = () => `
   <section class="py-8 px-4 sm:px-8 max-w-7xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
       ${createInitiativesSection()}
@@ -602,7 +602,7 @@ const createMainMiddleSection = () => `
        ${createInitiativesSection()}
       ${createGemConnectSection()}
     `;
-    
+
     // Start updating static HTML banner automatically from JavaScript data
     startNoticeRotator();
   };
