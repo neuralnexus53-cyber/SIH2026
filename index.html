@@ -19,162 +19,213 @@
 
 
   <!-- Main Navigation Header -->
+  <!-- Main Navigation Header -->
   <header class="bg-slate-900 text-white w-full">
   
-  <!-- Top Navigation & Action Bar -->
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-    
-    <!-- Left: Hamburger (Mobile) + Logo -->
-    <div class="flex items-center gap-3">
-      <button class="p-1.5 text-white md:hidden hover:text-amber-400 focus:outline-none" aria-label="Toggle Menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-          <path d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+    <!-- Top Navigation & Action Bar -->
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4 relative">
+      
+      <!-- Left: Hamburger (Mobile) only -->
+      <div class="flex items-center gap-3 shrink-0 md:hidden z-10">
+        <button class="p-1.5 text-white hover:text-amber-400 focus:outline-none" aria-label="Toggle Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
 
-      <a href="#" class="flex items-center">
-        <img src="/src/components/img/logoclone1.png" alt="GeM Logo" class="h-8 sm:h-10 w-auto object-contain" />
-      </a>
+      <!-- Left-aligned Logo on Desktop, Centered on Mobile -->
+      <div class="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center justify-center z-0">
+        <a href="#" class="flex items-center">
+          <img src="/src/components/img/logoclone1.png" alt="GeM Logo" class="h-8 sm:h-10 w-auto object-contain" />
+        </a>
+      </div>
+
+      <!-- Center: Search Input Section (Only visible on Desktop/Laptop) -->
+      <div class="hidden md:flex flex-1 max-w-xl mx-8 z-10">
+        <form class="flex items-center bg-white rounded-full overflow-hidden shadow-md h-9 w-full">
+          <input 
+            type="text" 
+            placeholder="Looking for something on GeM?" 
+            class="w-full px-5 py-2 text-gray-800 text-xs focus:outline-none placeholder:text-gray-400" 
+            required 
+          />
+          <button 
+            type="submit" 
+            class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-5 h-full flex items-center justify-center transition shrink-0 border-none"
+            aria-label="Search"
+          >
+            <span class="text-xs uppercase tracking-wide">Search</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Right: Actions -->
+      <div class="flex items-center gap-4 z-10">
+        <!-- Desktop Quick Actions (Login, Register, FAQs, Help) -->
+        <nav class="hidden md:flex items-center space-x-6 text-xs font-semibold text-slate-200">
+          <a href="#" class="hover:text-amber-400 transition-colors">Login</a>
+          <a href="#" class="hover:text-amber-400 transition-colors">Register</a>
+          <a href="#" class="hover:text-amber-400 transition-colors">FAQs</a>
+          <a href="#" class="hover:text-amber-400 transition-colors">Help</a>
+        </nav>
+
+        <!-- Mobile/Tablet User Profile Dropdown on Hover -->
+        <div class="md:hidden relative group">
+          <button class="p-1 text-white hover:text-amber-400 transition-colors focus:outline-none" aria-label="User Account">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-7 h-7">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+            </svg>
+          </button>
+          <!-- Dropdown Menu -->
+          <div class="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg border border-slate-200 py-1 hidden group-hover:block z-50 text-slate-800 text-xs font-semibold">
+            <a href="#" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-amber-500 transition-colors">Login</a>
+            <a href="#" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-amber-500 transition-colors">Register</a>
+            <a href="#" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-amber-500 transition-colors">FAQs</a>
+            <a href="#" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-amber-500 transition-colors">Help</a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Center/Right Desktop Quick Actions (Hidden on Mobile) -->
-    <nav class="hidden md:flex items-center space-x-5 text-xs font-medium">
-      <a href="#" class="hover:text-amber-400 transition-colors">Forward Auction <span class="text-[9px]"></span></a>
-      <a href="#" class="hover:text-amber-400 transition-colors">Bids <span class="text-[9px]"></span></a>
-      <a href="#" class="hover:text-amber-400 transition-colors">Sign Up <span class="text-[9px]"></span></a>
-      <a href="#" class="hover:text-amber-400 transition-colors">Login <span class="text-[9px]"></span></a>
-    </nav>
-
-    <!-- Mobile User Profile Icon (Hidden on Desktop) -->
-    <div class="md:hidden flex items-center">
-      <button class="p-1 text-white hover:text-amber-400 transition-colors" aria-label="User Account">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-7 h-7">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-        </svg>
-      </button>
-    </div>
-
-  </div>
-
-  <!-- Secondary Menu: Categories Row -->
-  <div class="border-t border-slate-800 bg-slate-900/50">
-    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center space-x-6 overflow-x-auto text-[11px] font-semibold tracking-wider text-slate-200 uppercase scrollbar-none">
-      <a href="#" class="hover:text-amber-400 whitespace-nowrap text-amber-400 border-b-2 border-amber-400 pb-0.5">PRODUCTS</a>
-      <a href="#" class="hover:text-amber-400 whitespace-nowrap transition-colors">SERVICES</a>
-      <a href="#" class="hover:text-amber-400 whitespace-nowrap transition-colors">CONTENT</a>
-      <a href="#" class="hover:text-amber-400 whitespace-nowrap transition-colors flex items-center gap-1">
-        INTERACTIVE TRAINING COURSES
-        <span class="bg-amber-500 text-slate-950 text-[9px] font-extrabold px-1 rounded-sm uppercase">NEW</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- Hero Search Input Section -->
-  <section class="py-3 px-4 max-w-3xl mx-auto">
-    <form id="gemSearchForm" class="flex items-center bg-white rounded-full overflow-hidden shadow-md h-10 w-full">
-      <input 
-        type="text" 
-        id="searchInput" 
-        placeholder="Looking for something on GeM?" 
-        class="w-full px-5 py-2 text-gray-800 text-xs sm:text-sm focus:outline-none placeholder:text-gray-400" 
-        required 
-      />
-      <button 
-        type="submit" 
-        class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-5 h-full flex items-center justify-center transition shrink-0"
-        aria-label="Search"
-      >
-        <span class="hidden sm:inline-block ml-1.5 text-xs uppercase tracking-wide">Search</span>
-      </button>
-    </form>
-  </section>
-
-  <!-- Notice Marquee Bar -->
-  <section class="bg-slate-950 py-1.5 px-4 w-full">
-    <div class="max-w-7xl mx-auto flex items-center overflow-hidden text-xs">
-      <div id="marquee-content" class="inline-flex items-center gap-3 whitespace-nowrap animate-[marquee_14s_linear_infinite] hover:[animation-play-state:paused]">
-        <span id="notice-tag" class="bg-amber-500 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded uppercase shrink-0">
-          NOTICE
-        </span>
-        <span id="notice-desc" class="text-slate-300 shrink-0 text-xs">
-          GeM portal maintenance scheduled for this Sunday from 4 AM to 6 AM.
-        </span>
+    <!-- Secondary Navigation Menu Bar (Home, About Us, Our Initiative, Statistics) -->
+    <div class="bg-slate-950 border-t border-slate-800">
+      <!-- Desktop (Laptop) view -->
+      <div class="hidden md:flex max-w-7xl mx-auto px-4 py-2.5 items-center justify-start space-x-8 text-[11px] font-bold tracking-wider text-slate-200 uppercase">
+        <a href="#" class="hover:text-amber-400 transition-colors">Home</a>
+        <a href="#" class="hover:text-amber-400 transition-colors">About Us</a>
+        <a href="#" class="hover:text-amber-400 transition-colors">Our Initiative</a>
+        <a href="#" class="hover:text-amber-400 transition-colors">Statistics</a>
+      </div>
+      <!-- Mobile/Tablet view (no scroll, static flex row) -->
+      <div class="flex md:hidden max-w-7xl mx-auto px-4 py-3 items-center justify-center space-x-6 text-[10px] sm:text-[11px] font-bold tracking-wider text-slate-200 uppercase">
+        <a href="#" class="hover:text-amber-400 transition-colors">Home</a>
+        <a href="#" class="hover:text-amber-400 transition-colors">About Us</a>
+        <a href="#" class="hover:text-amber-400 transition-colors">Our Initiative</a>
       </div>
     </div>
+
+    <!-- Mobile-only Search Bar Hero Section -->
+    <section class="md:hidden py-3 px-4 max-w-3xl mx-auto">
+      <form id="gemSearchFormMobile" class="flex items-center bg-white rounded-full overflow-hidden shadow-md h-10 w-full">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Looking for something on GeM?" 
+          class="w-full px-5 py-2 text-gray-800 text-xs sm:text-sm focus:outline-none placeholder:text-gray-400" 
+          required 
+        />
+        <button 
+          type="submit" 
+          class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-5 h-full flex items-center justify-center transition shrink-0 border-none"
+          aria-label="Search"
+        >
+          <span class="text-xs uppercase tracking-wide">Search</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- Notice Marquee Bar -->
+    <section class="bg-slate-950 py-1.5 px-4 w-full border-t border-slate-800">
+      <div class="max-w-7xl mx-auto flex items-center overflow-hidden text-xs">
+        <div id="marquee-content" class="inline-flex items-center gap-3 whitespace-nowrap animate-[marquee_14s_linear_infinite] hover:[animation-play-state:paused]">
+          <span id="notice-tag" class="bg-amber-500 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded uppercase shrink-0">
+            NOTICE
+          </span>
+          <span id="notice-desc" class="text-slate-300 shrink-0 text-xs">
+            GeM portal maintenance scheduled for this Sunday from 4 AM to 6 AM.
+          </span>
+        </div>
+      </div>
+    </section>
+
+  </header>
+
+  <!-- Amazon-style Hero Carousel Section -->
+  <section class="relative w-full overflow-hidden bg-slate-100 group h-[280px] sm:h-[380px] md:h-[480px] lg:h-[calc(100vh-140px)] xl:h-[calc(100vh-160px)] min-h-[450px]">
+    <!-- Slides Container -->
+    <div id="hero-slides" class="relative w-full h-full flex" style="transition: transform 500ms ease-in-out;">
+      <!-- Slide 1 -->
+      <div class="w-full min-w-full h-full flex-shrink-0 relative">
+        <img src="./src/components/img/banner1.jpg" alt="Hero Banner 1" class="w-full h-full object-cover object-top" />
+      </div>
+      <!-- Slide 2 -->
+      <div class="w-full min-w-full h-full flex-shrink-0 relative">
+        <img src="./src/components/img/banner2.jpg" alt="Hero Banner 2" class="w-full h-full object-cover object-top" />
+      </div>
+      <!-- Slide 3 -->
+      <div class="w-full min-w-full h-full flex-shrink-0 relative">
+        <img src="./src/components/img/banner3.jpg" alt="Hero Banner 3" class="w-full h-full object-cover object-top" />
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button id="prev-slide" class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/15 hover:bg-black/30 text-white rounded-md p-3 cursor-pointer transition focus:outline-none z-30 flex items-center justify-center border-none">
+      <i class="fa-solid fa-chevron-left text-2xl"></i>
+    </button>
+    <button id="next-slide" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/15 hover:bg-black/30 text-white rounded-md p-3 cursor-pointer transition focus:outline-none z-30 flex items-center justify-center border-none">
+      <i class="fa-solid fa-chevron-right text-2xl"></i>
+    </button>
+
+    <!-- Amazon-style Bottom Gradient & Blur Overlay -->
+    <div class="absolute bottom-0 left-0 w-full h-56 sm:h-72 bg-gradient-to-t from-white via-white/80 to-transparent backdrop-blur-[2px] pointer-events-none z-10 border-b border-slate-200/50"></div>
+
+    <!-- Slide Indicators/Dots -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-30">
+      <button class="hero-dot w-2.5 h-2.5 rounded-full bg-slate-900/40 hover:bg-slate-900 border border-white/50 transition cursor-pointer" data-slide="0"></button>
+      <button class="hero-dot w-2.5 h-2.5 rounded-full bg-slate-900/40 hover:bg-slate-900 border border-white/50 transition cursor-pointer" data-slide="1"></button>
+      <button class="hero-dot w-2.5 h-2.5 rounded-full bg-slate-900/40 hover:bg-slate-900 border border-white/50 transition cursor-pointer" data-slide="2"></button>
+    </div>
   </section>
 
-</header>
   <div id="main-content" class="grid w-full bg-white text-white min-h-screen">
     <!-- Dynamic content render here -->
 
   </div>
 
 
-  <footer class="bg-white text-slate-500 pt-10 pb-8 text-xs font-normal border-t border-slate-200">
-    <div class="max-w-xl lg:max-w-6xl mx-auto px-4 sm:px-6">
+  <footer class="bg-slate-50 text-slate-600 pt-10 pb-8 text-xs font-normal border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Multi-Column Grid (2 cols on mobile, 6 cols on laptop) -->
-      < class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-8 pb-8 text-left">
+      <!-- Responsive Grid for Footer Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pb-8 border-b border-slate-200">
 
-        <div>
-          <h3 class="text-slate-900 font-bold mb-3 tracking-wide uppercase text-xs">WEB INFO</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:text-slate-900 transition-colors">Terms of Use</a></li>
-            <li><a href="#" class="hover:text-slate-900 transition-colors">Website Policies</a></li>
-            <li><a href="#" class="hover:text-slate-900 transition-colors">Document Help</a></li>
-            <li><a href="#" class="hover:text-slate-900 transition-colors">Sitemap</a></li>
-            <li><a href="#" class="hover:text-slate-900 transition-colors">Web Information Manager</a></li>
+        <!-- Web Info Box -->
+        <div class="bg-white p-6 rounded-lg border border-slate-200/60 shadow-sm flex flex-col text-center">
+          <h3 class="text-slate-900 font-bold mb-4 uppercase text-xs tracking-wider">Web Info</h3>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="#" class="hover:text-yellow-600 transition-colors font-medium">Terms of Use</a></li>
+            <li><a href="#" class="hover:text-yellow-600 transition-colors font-medium">Website Policy</a></li>
+            <li><a href="#" class="hover:text-yellow-600 transition-colors font-medium">Document Help</a></li>
           </ul>
         </div>
 
-        <div>
-          <h3 class="text-slate-900 font-bold mb-3 tracking-wide uppercase text-xs">ABOUT GeM 2.0</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:text-slate-900 transition-colors">Introduction to GeM 2.0</a></li>
-            
-            <li><a href="#" class="hover:text-slate-900 transition-colors">Analytics</a></li>
-            <li><a href="#" class="hover:text-slate-900 transition-colors">New on GeM 2.0</a></li>
-            <li><a href="#" class="hover:text-slate-900 transition-colors">Testimonials</a></li>
-           
+        <!-- Zem 2.0 Box -->
+        <div class="bg-white p-6 rounded-lg border border-slate-200/60 shadow-sm flex flex-col text-center">
+          <h3 class="text-slate-900 font-bold mb-4 uppercase text-xs tracking-wider">Zem 2.0</h3>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="#" class="hover:text-yellow-600 transition-colors font-medium">Introduction to Zem 2.0</a></li>
+            <li><a href="#" class="hover:text-yellow-600 transition-colors font-medium">Statistics</a></li>
           </ul>
         </div>
 
-       
-
-       
-
-      
-        <div> 
-        <div>
-          <h3 class="text-slate-900 font-bold mb-3 tracking-wide uppercase text-xs">NEED HELP ?</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:text-slate-900 transition-colors">FAQs</a></li>
-            <li><a href="#" class="hover:text-slate-900 transition-colors">Feedback</a></li>
-            <li><a href="#" class="hover:text-slate-900 transition-colors">Raise a Ticket</a></li>
-            <li><a href="#" class="hover:text-slate-900 transition-colors">Contact Us</a></li>
-            <li><a href="#" class="hover:text-slate-900 transition-colors">Careers</a></li>
-            <li><a href="#" class="hover:text-slate-900 transition-colors">Useful links</a></li>
+        <!-- Need Help Box -->
+        <div class="bg-white p-6 rounded-lg border border-slate-200/60 shadow-sm flex flex-col text-center">
+          <h3 class="text-slate-900 font-bold mb-4 uppercase text-xs tracking-wider">Need Help</h3>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="#" class="hover:text-yellow-600 transition-colors font-medium">FAQs</a></li>
+            <li><a href="#" class="hover:text-yellow-600 transition-colors font-medium">Feedback</a></li>
+            <li><a href="#" class="hover:text-yellow-600 transition-colors font-medium">Raise a Ticket</a></li>
+            <li><a href="#" class="hover:text-yellow-600 transition-colors font-medium">Contact Us</a></li>
           </ul>
         </div>
-        
 
       </div>
 
-      <!-- Maintenance Notice -->
-      <div class="border-t border-slate-100 pt-6 text-center text-[11px] text-slate-500 space-y-1">
-        <p>This site is designed, developed and maintained by Managed Service Provider and is owned by Government e Marketplace (GeM)</p>
-        <p>Best viewed on Google Chrome, Microsoft Edge, Mozilla Firefox, or Safari with a screen resolution of 1920 × 1080 (Full HD) or higher</p>
-      </div>
-
-      <!-- Footer Bottom Section -->
-      <div class="mt-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row justify-between text-[11px] text-slate-600 gap-4">
-        <div class="sm:w-1/3">
-          <p>© 2026 GeM All rights reserved</p>
-          <p class="font-bold text-slate-900 mt-1">Last Updated: 31-Aug-2026</p>
-        </div>
-        <div class="sm:w-2/3 text-left sm:text-right">
-          <p>Government e Marketplace is a 100 percent Government owned Section 8 company setup under the aegis of Department of Commerce, Ministry of Commerce and Industry for procurement of common use goods and services by government ministries, departments and CPSEs.</p>
-        </div>
+      <!-- Bottom Section -->
+      <div class="pt-6 flex flex-col items-center justify-center text-xs text-slate-500 gap-2 text-center">
+        <p class="font-medium">All rights reserved by Team Neural Nexus and Zem 2.0 and maintained by Team Neural Nexus</p>
       </div>
 
     </div>
