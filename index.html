@@ -13,13 +13,27 @@
   <link rel="stylesheet" href="./dist/output.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    .page-fade-in { animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .page-fade-in {
+      animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -27,86 +41,107 @@
 <body class="bg-gray-100 font-sans relative text-slate-800 antialiased min-h-screen flex flex-col justify-between">
 
   <!-- Waterfall Hamburger Navigation Drawer (Full single overlay with 1 scrollbar) -->
-  <div id="hamburger-drawer" class="fixed inset-0 w-full h-full bg-slate-950/95 backdrop-blur-xl z-50 transform -translate-y-full transition-transform duration-500 ease-in-out text-white shadow-2xl overflow-y-auto">
+  <div id="hamburger-drawer"
+    class="fixed inset-0 w-full h-full bg-slate-950/95 backdrop-blur-xl z-50 transform -translate-y-full transition-transform duration-500 ease-in-out text-white shadow-2xl overflow-y-auto">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 min-h-full flex flex-col justify-between">
-      
+
       <div>
         <!-- Top Bar inside Drawer with Title and Close button -->
         <div class="flex items-center justify-between border-b border-slate-800 pb-5 mb-8">
           <div class="flex items-center gap-3">
             <img src="/src/components/img/logoclone1.png" alt="GeM Logo" class="h-8 w-auto object-contain" />
             <div>
-              <div class="text-[10px] font-extrabold uppercase tracking-widest text-amber-400">Government e Marketplace 2.0</div>
+              <div class="text-[10px] font-extrabold uppercase tracking-widest text-amber-400">Government e Marketplace
+                2.0</div>
               <h3 class="text-base font-bold text-white">Portal Navigation Directory</h3>
             </div>
           </div>
-          <button id="close-drawer-btn" class="text-slate-400 hover:text-white transition-colors cursor-pointer border-none bg-slate-900 hover:bg-slate-800 p-2.5 rounded-full" aria-label="Close Drawer">
+          <button id="close-drawer-btn"
+            class="text-slate-400 hover:text-white transition-colors cursor-pointer border-none bg-slate-900 hover:bg-slate-800 p-2.5 rounded-full"
+            aria-label="Close Drawer">
             <i class="fa-solid fa-xmark text-xl"></i>
           </button>
         </div>
 
         <!-- 3 Categorized Columns -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-          
+
           <!-- Category 1: Web Info & Core -->
           <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 flex flex-col gap-2">
-            <div class="text-[10px] font-extrabold uppercase tracking-wider text-amber-400 pb-2 border-b border-slate-800 flex items-center gap-2">
+            <div
+              class="text-[10px] font-extrabold uppercase tracking-wider text-amber-400 pb-2 border-b border-slate-800 flex items-center gap-2">
               <i class="fa-solid fa-compass"></i> Core Overview & Web Info
             </div>
-            <a href="#home" data-route="home" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#home" data-route="home"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-house text-slate-400 text-xs w-4"></i> Home
             </a>
-            <a href="#about" data-route="about" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#about" data-route="about"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-circle-info text-slate-400 text-xs w-4"></i> About Us
             </a>
-            <a href="#terms" data-route="terms" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#terms" data-route="terms"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-gavel text-slate-400 text-xs w-4"></i> Terms of Use
             </a>
-            <a href="#policy" data-route="policy" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#policy" data-route="policy"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-shield-halved text-slate-400 text-xs w-4"></i> Website Policy
             </a>
-            <a href="#help" data-route="help" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#help" data-route="help"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-book-open text-slate-400 text-xs w-4"></i> Document Help
             </a>
           </div>
 
           <!-- Category 2: GeM 2.0 Ecosystem -->
           <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 flex flex-col gap-2">
-            <div class="text-[10px] font-extrabold uppercase tracking-wider text-blue-400 pb-2 border-b border-slate-800 flex items-center gap-2">
+            <div
+              class="text-[10px] font-extrabold uppercase tracking-wider text-blue-400 pb-2 border-b border-slate-800 flex items-center gap-2">
               <i class="fa-solid fa-rocket"></i> GeM 2.0 Ecosystem
             </div>
-            <a href="#gem2" data-route="gem2" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#gem2" data-route="gem2"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-microchip text-slate-400 text-xs w-4"></i> Introduction to GeM 2.0
             </a>
-            <a href="#initiatives" data-route="initiatives" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#initiatives" data-route="initiatives"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-lightbulb text-slate-400 text-xs w-4"></i> Our Initiative
             </a>
-            <a href="#statistics" data-route="statistics" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#statistics" data-route="statistics"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-chart-pie text-slate-400 text-xs w-4"></i> Statistics
             </a>
-            <a href="#subscription" data-route="subscription" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#subscription" data-route="subscription"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-credit-card text-slate-400 text-xs w-4"></i> Subscription Model
             </a>
-            <a href="#login" data-route="login" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#login" data-route="login"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-arrow-right-to-bracket text-slate-400 text-xs w-4"></i> Portal Login & Register
             </a>
           </div>
 
           <!-- Category 3: Need Help & Support -->
           <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 flex flex-col gap-2">
-            <div class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-400 pb-2 border-b border-slate-800 flex items-center gap-2">
+            <div
+              class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-400 pb-2 border-b border-slate-800 flex items-center gap-2">
               <i class="fa-solid fa-headset"></i> Need Help & Support
             </div>
-            <a href="#faqs" data-route="faqs" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#faqs" data-route="faqs"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-circle-question text-slate-400 text-xs w-4"></i> FAQs
             </a>
-            <a href="#feedback" data-route="feedback" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#feedback" data-route="feedback"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-comments text-slate-400 text-xs w-4"></i> Feedback
             </a>
-            <a href="#ticket" data-route="ticket" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#ticket" data-route="ticket"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-ticket text-slate-400 text-xs w-4"></i> Raise a Ticket
             </a>
-            <a href="#contact" data-route="contact" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
+            <a href="#contact" data-route="contact"
+              class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-200 hover:text-amber-400 hover:bg-slate-800 transition">
               <i class="fa-solid fa-phone-volume text-slate-400 text-xs w-4"></i> Contact Us
             </a>
           </div>
@@ -115,7 +150,8 @@
       </div>
 
       <!-- Bottom Help Note inside Drawer -->
-      <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2 text-center sm:text-left">
+      <div
+        class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2 text-center sm:text-left">
         <span>Toll-Free Helpline: <strong class="text-amber-400 font-bold">1800-419-3436</strong></span>
         <span>National Public Procurement Portal of India</span>
       </div>
@@ -127,41 +163,41 @@
     <!-- Main Navigation Header Container -->
     <div id="global-header-container">
       <header class="bg-slate-900 text-white w-full shadow-md">
-      
+
         <!-- Top Navigation & Action Bar -->
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4 relative">
-          
+
           <!-- Left: Hamburger Trigger Button (Visible on both Mobile and Desktop) -->
           <div class="flex items-center gap-3 shrink-0 z-10">
-            <button id="hamburger-btn" class="p-1.5 text-white hover:text-amber-400 focus:outline-none cursor-pointer border-none bg-transparent rounded transition-colors" aria-label="Toggle Menu">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <button id="hamburger-btn"
+              class="p-1.5 text-white hover:text-amber-400 focus:outline-none cursor-pointer border-none bg-transparent rounded transition-colors"
+              aria-label="Toggle Menu">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" viewBox="0 0 24 24">
                 <path d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
             </button>
           </div>
 
           <!-- Left-aligned Logo on Desktop, Centered on Mobile -->
-          <div class="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center justify-center z-0">
+          <div
+            class="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center justify-center z-0">
             <a href="#home" data-route="home" class="flex items-center group">
-              <img src="/src/components/img/logoclone1.png" alt="GeM Logo" class="h-8 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105" />
+              <img src="/src/components/img/logoclone1.png" alt="GeM Logo"
+                class="h-8 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105" />
             </a>
           </div>
 
           <!-- Center: Search Input Section (Only visible on Desktop/Laptop) -->
           <div class="hidden md:flex flex-1 max-w-xl mx-8 z-10">
-            <form id="gemSearchFormDesktop" class="flex items-center bg-white rounded-full overflow-hidden shadow-md h-9 w-full ring-1 ring-slate-700 focus-within:ring-2 focus-within:ring-amber-500 transition-all">
-              <input 
-                type="text" 
-                id="desktopSearchInput"
-                placeholder="Looking for something on GeM? (e.g. Laptops, Solar, Tenders)" 
-                class="w-full px-5 py-2 text-gray-800 text-xs focus:outline-none placeholder:text-gray-400" 
-                required 
-              />
-              <button 
-                type="submit" 
+            <form id="gemSearchFormDesktop"
+              class="flex items-center bg-white rounded-full overflow-hidden shadow-md h-9 w-full ring-1 ring-slate-700 focus-within:ring-2 focus-within:ring-amber-500 transition-all">
+              <input type="text" id="desktopSearchInput"
+                placeholder="Looking for something on GeM? (e.g. Laptops, Solar, Tenders)"
+                class="w-full px-5 py-2 text-gray-800 text-xs focus:outline-none placeholder:text-gray-400" required />
+              <button type="submit"
                 class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-5 h-full flex items-center justify-center transition shrink-0 border-none cursor-pointer"
-                aria-label="Search"
-              >
+                aria-label="Search">
                 <span class="text-xs uppercase tracking-wide">Search</span>
               </button>
             </form>
@@ -179,21 +215,32 @@
 
             <!-- Mobile/Tablet User Profile Dropdown on Hover/Click -->
             <div class="md:hidden relative group">
-              <button class="p-1 text-white hover:text-amber-400 transition-colors focus:outline-none cursor-pointer bg-transparent border-none" aria-label="User Account">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-7 h-7">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+              <button
+                class="p-1 text-white hover:text-amber-400 transition-colors focus:outline-none cursor-pointer bg-transparent border-none"
+                aria-label="User Account">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
+                  stroke="currentColor" class="w-7 h-7">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                 </svg>
               </button>
               <!-- Dropdown Menu -->
               <div class="absolute right-0 top-full pt-2 w-44 z-50 hidden group-hover:block group-focus-within:block">
-                <div class="bg-white rounded-lg shadow-xl border border-slate-200 py-2 text-slate-800 text-xs font-semibold">
-                  <a href="#login" data-route="login" class="block px-4 py-2 hover:bg-slate-50 hover:text-amber-600 transition-colors">Login</a>
-                  <a href="#register" data-route="register" class="block px-4 py-2 hover:bg-slate-50 hover:text-amber-600 transition-colors">Register</a>
-                  <a href="#faqs" data-route="faqs" class="block px-4 py-2 hover:bg-slate-50 hover:text-amber-600 transition-colors">FAQs</a>
-                  <a href="#help" data-route="help" class="block px-4 py-2 hover:bg-slate-50 hover:text-amber-600 transition-colors">Help</a>
+                <div
+                  class="bg-white rounded-lg shadow-xl border border-slate-200 py-2 text-slate-800 text-xs font-semibold">
+                  <a href="#login" data-route="login"
+                    class="block px-4 py-2 hover:bg-slate-50 hover:text-amber-600 transition-colors">Login</a>
+                  <a href="#register" data-route="register"
+                    class="block px-4 py-2 hover:bg-slate-50 hover:text-amber-600 transition-colors">Register</a>
+                  <a href="#faqs" data-route="faqs"
+                    class="block px-4 py-2 hover:bg-slate-50 hover:text-amber-600 transition-colors">FAQs</a>
+                  <a href="#help" data-route="help"
+                    class="block px-4 py-2 hover:bg-slate-50 hover:text-amber-600 transition-colors">Help</a>
                   <div class="border-t border-slate-100 my-1"></div>
-                  <a href="#feedback" data-route="feedback" class="block px-4 py-2 hover:bg-slate-50 hover:text-amber-600 transition-colors">Feedback</a>
-                  <a href="#ticket" data-route="ticket" class="block px-4 py-2 hover:bg-slate-50 hover:text-amber-600 transition-colors">Raise a Ticket</a>
+                  <a href="#feedback" data-route="feedback"
+                    class="block px-4 py-2 hover:bg-slate-50 hover:text-amber-600 transition-colors">Feedback</a>
+                  <a href="#ticket" data-route="ticket"
+                    class="block px-4 py-2 hover:bg-slate-50 hover:text-amber-600 transition-colors">Raise a Ticket</a>
                 </div>
               </div>
             </div>
@@ -204,38 +251,38 @@
         <!-- Secondary Navigation Menu Bar (Home, About Us, Our Initiative, Statistics) -->
         <div class="bg-slate-950 border-t border-slate-800">
           <!-- Desktop (Laptop) view -->
-          <div class="hidden md:flex max-w-7xl mx-auto px-4 py-2.5 items-center justify-start space-x-8 text-[11px] font-bold tracking-wider text-slate-200 uppercase">
+          <div
+            class="hidden md:flex max-w-7xl mx-auto px-4 py-2.5 items-center justify-start space-x-8 text-[11px] font-bold tracking-wider text-slate-200 uppercase">
             <a href="#home" data-route="home" class="hover:text-amber-400 transition-colors">Home</a>
             <a href="#about" data-route="about" class="hover:text-amber-400 transition-colors">About Us</a>
-            <a href="#initiatives" data-route="initiatives" class="hover:text-amber-400 transition-colors">Our Initiative</a>
-            <a href="#subscription" data-route="subscription" class="hover:text-amber-400 transition-colors">Subscription Model</a>
+            <a href="#initiatives" data-route="initiatives" class="hover:text-amber-400 transition-colors">Our
+              Initiative</a>
+            <a href="#subscription" data-route="subscription"
+              class="hover:text-amber-400 transition-colors">Subscription Model</a>
             <a href="#statistics" data-route="statistics" class="hover:text-amber-400 transition-colors">Statistics</a>
             <a href="#contact" data-route="contact" class="hover:text-amber-400 transition-colors">Contact Us</a>
           </div>
           <!-- Mobile/Tablet view (no scroll, static flex row) -->
-          <div class="flex md:hidden max-w-7xl mx-auto px-4 py-3 items-center justify-center space-x-5 text-[10px] sm:text-[11px] font-bold tracking-wider text-slate-200 uppercase">
+          <div
+            class="flex md:hidden max-w-7xl mx-auto px-4 py-3 items-center justify-center space-x-5 text-[10px] sm:text-[11px] font-bold tracking-wider text-slate-200 uppercase">
             <a href="#home" data-route="home" class="hover:text-amber-400 transition-colors">Home</a>
             <a href="#about" data-route="about" class="hover:text-amber-400 transition-colors">About Us</a>
-            <a href="#initiatives" data-route="initiatives" class="hover:text-amber-400 transition-colors">Our Initiative</a>
+            <a href="#initiatives" data-route="initiatives" class="hover:text-amber-400 transition-colors">Our
+              Initiative</a>
             <a href="#statistics" data-route="statistics" class="hover:text-amber-400 transition-colors">Statistics</a>
           </div>
         </div>
 
         <!-- Mobile-only Search Bar Hero Section -->
         <section class="md:hidden py-3 px-4 max-w-3xl mx-auto">
-          <form id="gemSearchFormMobile" class="flex items-center bg-white rounded-full overflow-hidden shadow-md h-10 w-full">
-            <input 
-              type="text" 
-              id="mobileSearchInput" 
-              placeholder="Looking for something on GeM?" 
-              class="w-full px-5 py-2 text-gray-800 text-xs sm:text-sm focus:outline-none placeholder:text-gray-400" 
-              required 
-            />
-            <button 
-              type="submit" 
+          <form id="gemSearchFormMobile"
+            class="flex items-center bg-white rounded-full overflow-hidden shadow-md h-10 w-full">
+            <input type="text" id="mobileSearchInput" placeholder="Looking for something on GeM?"
+              class="w-full px-5 py-2 text-gray-800 text-xs sm:text-sm focus:outline-none placeholder:text-gray-400"
+              required />
+            <button type="submit"
               class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-5 h-full flex items-center justify-center transition shrink-0 border-none cursor-pointer"
-              aria-label="Search"
-            >
+              aria-label="Search">
               <span class="text-xs uppercase tracking-wide">Search</span>
             </button>
           </form>
@@ -245,7 +292,8 @@
         <section class="bg-slate-950 py-1.5 px-4 w-full border-t border-slate-800">
           <div class="max-w-7xl mx-auto flex items-center overflow-hidden text-xs">
             <div id="marquee-content" class="inline-flex items-center gap-3 whitespace-nowrap">
-              <span id="notice-tag" class="bg-amber-500 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded uppercase shrink-0">
+              <span id="notice-tag"
+                class="bg-amber-500 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded uppercase shrink-0">
                 NOTICE
               </span>
               <span id="notice-desc" class="text-slate-300 shrink-0 text-xs">
@@ -260,74 +308,100 @@
 
     <!-- Hero Carousel Section Container (Shown only on Home view) -->
     <div id="global-hero-container">
-      <section class="relative w-full overflow-hidden bg-slate-100 group h-[280px] sm:h-[380px] md:h-[480px] lg:h-[calc(100vh-140px)] xl:h-[calc(100vh-160px)] min-h-[450px]">
+      <section
+        class="relative w-full overflow-hidden bg-slate-100 group h-[280px] sm:h-[380px] md:h-[480px] lg:h-[calc(100vh-140px)] xl:h-[calc(100vh-160px)] min-h-[450px]">
         <!-- Slides Container -->
         <div id="hero-slides" class="relative w-full h-full flex" style="transition: transform 500ms ease-in-out;">
           <!-- Slide 1 -->
           <div class="w-full min-w-full h-full flex-shrink-0 relative">
-            <img src="./src/components/img/banner1.jpg" alt="Hero Banner 1" class="w-full h-full object-cover object-top" />
+            <img src="./src/components/img/banner1.jpg" alt="Hero Banner 1"
+              class="w-full h-full object-cover object-top" />
           </div>
           <!-- Slide 2 -->
           <div class="w-full min-w-full h-full flex-shrink-0 relative">
-            <img src="./src/components/img/banner2.jpg" alt="Hero Banner 2" class="w-full h-full object-cover object-top" />
+            <img src="./src/components/img/banner2.jpg" alt="Hero Banner 2"
+              class="w-full h-full object-cover object-top" />
           </div>
           <!-- Slide 3 -->
           <div class="w-full min-w-full h-full flex-shrink-0 relative">
-            <img src="./src/components/img/banner3.jpg" alt="Hero Banner 3" class="w-full h-full object-cover object-top" />
+            <img src="./src/components/img/banner3.jpg" alt="Hero Banner 3"
+              class="w-full h-full object-cover object-top" />
           </div>
         </div>
 
         <!-- Navigation Arrows -->
-        <button id="prev-slide" class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full w-11 h-11 cursor-pointer transition focus:outline-none z-30 flex items-center justify-center border-none" aria-label="Previous Slide">
+        <button id="prev-slide"
+          class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full w-11 h-11 cursor-pointer transition focus:outline-none z-30 flex items-center justify-center border-none"
+          aria-label="Previous Slide">
           <i class="fa-solid fa-chevron-left text-lg"></i>
         </button>
-        <button id="next-slide" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full w-11 h-11 cursor-pointer transition focus:outline-none z-30 flex items-center justify-center border-none" aria-label="Next Slide">
+        <button id="next-slide"
+          class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full w-11 h-11 cursor-pointer transition focus:outline-none z-30 flex items-center justify-center border-none"
+          aria-label="Next Slide">
           <i class="fa-solid fa-chevron-right text-lg"></i>
         </button>
 
         <!-- Amazon-style Bottom Gradient & Blur Overlay -->
-        <div class="absolute bottom-0 left-0 w-full h-28 sm:h-44 bg-gradient-to-t from-white via-white/80 to-transparent backdrop-blur-[2px] pointer-events-none z-10 border-b border-slate-200/50"></div>
+        <div
+          class="absolute bottom-0 left-0 w-full h-28 sm:h-44 bg-gradient-to-t from-white via-white/80 to-transparent backdrop-blur-[2px] pointer-events-none z-10 border-b border-slate-200/50">
+        </div>
       </section>
     </div>
 
     <!-- Main Dynamic Content Target -->
     <main id="main-content" class="w-full bg-white text-slate-800 pb-16 flex-grow">
-      
+
       <!-- Section 1: About Us & GeM 2.0 -->
-      <section class="max-w-7xl mx-auto px-4 relative z-20 -mt-14 sm:-mt-20 md:-mt-24 lg:-mt-28 xl:-mt-36 text-slate-800">
+      <section
+        class="max-w-7xl mx-auto px-4 relative z-20 -mt-14 sm:-mt-20 md:-mt-24 lg:-mt-28 xl:-mt-36 text-slate-800">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-          
+
           <!-- Card 1: About Us (Interactive Learn More) -->
-          <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group overflow-hidden relative">
-            <div class="absolute -top-10 -right-10 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-500"></div>
+          <div
+            class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group overflow-hidden relative">
+            <div
+              class="absolute -top-10 -right-10 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-500">
+            </div>
             <div>
-              <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-600 mb-6 group-hover:bg-amber-500 group-hover:text-slate-900 transition-colors duration-300">
+              <div
+                class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-600 mb-6 group-hover:bg-amber-500 group-hover:text-slate-900 transition-colors duration-300">
                 <i class="fa-solid fa-circle-info text-xl"></i>
               </div>
               <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 tracking-tight">About Us</h2>
               <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                Government e Marketplace (GeM) is the National Public Procurement Portal of India. It is an end-to-end online marketplace for Central and State Government Ministries, Departments, Public Sector Undertakings (PSUs), and local bodies to procure common-use goods and services efficiently, transparently, and inclusively.
+                Government e Marketplace (GeM) is the National Public Procurement Portal of India. It is an end-to-end
+                online marketplace for Central and State Government Ministries, Departments, Public Sector Undertakings
+                (PSUs), and local bodies to procure common-use goods and services efficiently, transparently, and
+                inclusively.
               </p>
             </div>
-            <button data-route="about" class="self-start flex items-center gap-2 text-xs font-bold text-amber-600 group-hover:text-amber-700 transition-colors cursor-pointer bg-transparent border-none p-0">
+            <button data-route="about"
+              class="self-start flex items-center gap-2 text-xs font-bold text-amber-600 group-hover:text-amber-700 transition-colors cursor-pointer bg-transparent border-none p-0">
               <span>LEARN MORE</span>
               <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
             </button>
           </div>
 
           <!-- Card 2: GeM 2.0 Portal -->
-          <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group overflow-hidden relative">
-            <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-500"></div>
+          <div
+            class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group overflow-hidden relative">
+            <div
+              class="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-500">
+            </div>
             <div>
-              <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+              <div
+                class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                 <i class="fa-solid fa-laptop-code text-xl"></i>
               </div>
               <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 tracking-tight">GeM 2.0 Portal</h2>
               <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                GeM 2.0 represents the next generation of public procurement. Built on modern cloud technologies, GeM 2.0 integrates artificial intelligence, advanced machine learning matchmaking, a unified search engine, and predictive analytics to make procurement transparent, robust, and cost-effective.
+                GeM 2.0 represents the next generation of public procurement. Built on modern cloud technologies, GeM
+                2.0 integrates artificial intelligence, advanced machine learning matchmaking, a unified search engine,
+                and predictive analytics to make procurement transparent, robust, and cost-effective.
               </p>
             </div>
-            <button data-route="gem2" class="self-start flex items-center gap-2 text-xs font-bold text-blue-600 group-hover:text-blue-700 transition-colors cursor-pointer bg-transparent border-none p-0">
+            <button data-route="gem2"
+              class="self-start flex items-center gap-2 text-xs font-bold text-blue-600 group-hover:text-blue-700 transition-colors cursor-pointer bg-transparent border-none p-0">
               <span>EXPLORE FEATURES</span>
               <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
             </button>
@@ -339,38 +413,52 @@
       <!-- Section 2: Our Initiatives & Subscription Model -->
       <section class="max-w-7xl mx-auto px-4 py-8 md:py-10 text-slate-800">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-          
+
           <!-- Card 1: Our Initiative -->
-          <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group overflow-hidden relative">
-            <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-500"></div>
+          <div
+            class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group overflow-hidden relative">
+            <div
+              class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-500">
+            </div>
             <div>
-              <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
+              <div
+                class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
                 <i class="fa-solid fa-lightbulb text-xl"></i>
               </div>
               <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 tracking-tight">Our Initiatives</h2>
               <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                From supporting local micro, small and medium enterprises (MSMEs) through targeted training, to fostering innovative start-ups via the Start-up Runway, we drive sustainable development and make government public procurement highly inclusive for every seller in the country.
+                From supporting local micro, small and medium enterprises (MSMEs) through targeted training, to
+                fostering innovative start-ups via the Start-up Runway, we drive sustainable development and make
+                government public procurement highly inclusive for every seller in the country.
               </p>
             </div>
-            <button data-route="initiatives" class="self-start flex items-center gap-2 text-xs font-bold text-emerald-600 group-hover:text-emerald-700 transition-colors cursor-pointer bg-transparent border-none p-0">
+            <button data-route="initiatives"
+              class="self-start flex items-center gap-2 text-xs font-bold text-emerald-600 group-hover:text-emerald-700 transition-colors cursor-pointer bg-transparent border-none p-0">
               <span>VIEW INITIATIVES</span>
               <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
             </button>
           </div>
 
           <!-- Card 2: Subscription Model -->
-          <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group overflow-hidden relative">
-            <div class="absolute -top-10 -right-10 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-500"></div>
+          <div
+            class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group overflow-hidden relative">
+            <div
+              class="absolute -top-10 -right-10 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-500">
+            </div>
             <div>
-              <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-600 mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">
+              <div
+                class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-600 mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">
                 <i class="fa-solid fa-credit-card text-xl"></i>
               </div>
               <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 tracking-tight">Subscription Model</h2>
               <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                Our flexible subscription model ensures fair access for sellers of all scales. Micro and small enterprises enjoy zero annual maintenance fees, while larger corporations subscribe to highly optimized tiers aligned with transaction volumes and advanced analytics support.
+                Our flexible subscription model ensures fair access for sellers of all scales. Micro and small
+                enterprises enjoy zero annual maintenance fees, while larger corporations subscribe to highly optimized
+                tiers aligned with transaction volumes and advanced analytics support.
               </p>
             </div>
-            <button data-route="subscription" class="self-start flex items-center gap-2 text-xs font-bold text-purple-600 group-hover:text-purple-700 transition-colors cursor-pointer bg-transparent border-none p-0">
+            <button data-route="subscription"
+              class="self-start flex items-center gap-2 text-xs font-bold text-purple-600 group-hover:text-purple-700 transition-colors cursor-pointer bg-transparent border-none p-0">
               <span>PRICING DETAILS</span>
               <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
             </button>
@@ -381,28 +469,35 @@
 
       <!-- Section 3: Statistics Section (CTA Card with Toggle Button) -->
       <section class="max-w-7xl mx-auto px-4 py-12 md:py-16 text-slate-800">
-        <div class="bg-slate-900 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden shadow-xl border border-slate-800">
+        <div
+          class="bg-slate-900 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden shadow-xl border border-slate-800">
           <div class="absolute -top-24 -left-24 w-64 h-64 bg-amber-500/20 rounded-full blur-3xl"></div>
           <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"></div>
 
           <div class="relative z-10 max-w-2xl mx-auto">
-            <span class="text-amber-400 font-bold text-xs uppercase tracking-widest mb-3 block">Real-time Portal Dashboard</span>
+            <span class="text-amber-400 font-bold text-xs uppercase tracking-widest mb-3 block">Real-time Portal
+              Dashboard</span>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 tracking-tight">Live Platform Statistics</h2>
             <p class="text-slate-400 text-sm mb-8 leading-relaxed">
-              Monitor procurement volumes, transaction speeds, registered buyers and sellers, and category metrics directly. Press the button below to toggle the live dashboard summary or explore the full analytical dashboard.
+              Monitor procurement volumes, transaction speeds, registered buyers and sellers, and category metrics
+              directly. Press the button below to toggle the live dashboard summary or explore the full analytical
+              dashboard.
             </p>
-            
+
             <div class="flex flex-wrap items-center justify-center gap-4">
-              <button id="toggle-stats-btn" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-7 py-3 rounded-full text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 cursor-pointer border-none focus:outline-none">
+              <button id="toggle-stats-btn"
+                class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-7 py-3 rounded-full text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 cursor-pointer border-none focus:outline-none">
                 Toggle Quick Stats
               </button>
-              <button data-route="statistics" class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-7 py-3 rounded-full text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 border border-slate-700 hover:border-amber-400 cursor-pointer focus:outline-none">
+              <button data-route="statistics"
+                class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-7 py-3 rounded-full text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 border border-slate-700 hover:border-amber-400 cursor-pointer focus:outline-none">
                 Open Full Analytics Hub &rarr;
               </button>
             </div>
 
             <!-- Dynamic Statistics Drawer (Toggled by JS) -->
-            <div id="stats-dashboard" class="mt-8 pt-8 border-t border-slate-800 grid grid-cols-2 md:grid-cols-4 gap-6 text-left hidden opacity-0 transition-all duration-500 ease-in-out transform -translate-y-4">
+            <div id="stats-dashboard"
+              class="mt-8 pt-8 border-t border-slate-800 grid grid-cols-2 md:grid-cols-4 gap-6 text-left hidden opacity-0 transition-all duration-500 ease-in-out transform -translate-y-4">
               <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800">
                 <span class="text-slate-400 text-[10px] uppercase font-bold block mb-1">Total Transaction Value</span>
                 <span class="text-lg sm:text-xl font-extrabold text-amber-400 block mt-1">₹ 8,42,105 Cr</span>
@@ -436,32 +531,45 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pb-8 border-b border-slate-200">
 
         <!-- Web Info Box -->
-        <div class="bg-white p-6 rounded-lg border border-slate-200/80 shadow-sm flex flex-col text-center hover:border-amber-400 transition-colors">
+        <div
+          class="bg-white p-6 rounded-lg border border-slate-200/80 shadow-sm flex flex-col text-center hover:border-amber-400 transition-colors">
           <h3 class="text-slate-900 font-bold mb-4 uppercase text-xs tracking-wider">Web Info</h3>
           <ul class="space-y-2.5 text-xs">
-            <li><a href="#terms" data-route="terms" class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Terms of Use</a></li>
-            <li><a href="#policy" data-route="policy" class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Website Policy</a></li>
-            <li><a href="#help" data-route="help" class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Document Help</a></li>
+            <li><a href="#terms" data-route="terms"
+                class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Terms of Use</a></li>
+            <li><a href="#policy" data-route="policy"
+                class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Website Policy</a></li>
+            <li><a href="#help" data-route="help"
+                class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Document Help</a></li>
           </ul>
         </div>
 
         <!-- GeM 2.0 Box -->
-        <div class="bg-white p-6 rounded-lg border border-slate-200/80 shadow-sm flex flex-col text-center hover:border-amber-400 transition-colors">
+        <div
+          class="bg-white p-6 rounded-lg border border-slate-200/80 shadow-sm flex flex-col text-center hover:border-amber-400 transition-colors">
           <h3 class="text-slate-900 font-bold mb-4 uppercase text-xs tracking-wider">GeM 2.0</h3>
           <ul class="space-y-2.5 text-xs">
-            <li><a href="#gem2" data-route="gem2" class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Introduction to GeM 2.0</a></li>
-            <li><a href="#statistics" data-route="statistics" class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Statistics</a></li>
+            <li><a href="#gem2" data-route="gem2"
+                class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Introduction to GeM 2.0</a>
+            </li>
+            <li><a href="#statistics" data-route="statistics"
+                class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Statistics</a></li>
           </ul>
         </div>
 
         <!-- Need Help Box -->
-        <div class="bg-white p-6 rounded-lg border border-slate-200/80 shadow-sm flex flex-col text-center hover:border-amber-400 transition-colors">
+        <div
+          class="bg-white p-6 rounded-lg border border-slate-200/80 shadow-sm flex flex-col text-center hover:border-amber-400 transition-colors">
           <h3 class="text-slate-900 font-bold mb-4 uppercase text-xs tracking-wider">Need Help</h3>
           <ul class="space-y-2.5 text-xs">
-            <li><a href="#faqs" data-route="faqs" class="text-slate-600 hover:text-amber-600 transition-colors font-medium">FAQs</a></li>
-            <li><a href="#feedback" data-route="feedback" class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Feedback</a></li>
-            <li><a href="#ticket" data-route="ticket" class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Raise a Ticket</a></li>
-            <li><a href="#contact" data-route="contact" class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Contact Us</a></li>
+            <li><a href="#faqs" data-route="faqs"
+                class="text-slate-600 hover:text-amber-600 transition-colors font-medium">FAQs</a></li>
+            <li><a href="#feedback" data-route="feedback"
+                class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Feedback</a></li>
+            <li><a href="#ticket" data-route="ticket"
+                class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Raise a Ticket</a></li>
+            <li><a href="#contact" data-route="contact"
+                class="text-slate-600 hover:text-amber-600 transition-colors font-medium">Contact Us</a></li>
           </ul>
         </div>
 
@@ -469,7 +577,8 @@
 
       <!-- Bottom Section (Exact Original Text) -->
       <div class="pt-6 flex flex-col items-center justify-center text-xs text-slate-500 gap-2 text-center">
-        <p class="font-medium text-slate-600">All rights reserved by Team Neural Nexus and GeM 2.0 and maintained by Team Neural Nexus</p>
+        <p class="font-medium text-slate-600">All rights reserved by Team Neural Nexus and GeM 2.0 and maintained by
+          Team Neural Nexus</p>
       </div>
 
     </div>
@@ -479,4 +588,5 @@
   <script src="./src/js/main.js" defer></script>
 
 </body>
+
 </html>

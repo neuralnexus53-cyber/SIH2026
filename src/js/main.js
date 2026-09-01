@@ -17,9 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const toast = document.createElement('div');
     toast.id = 'gem-toast';
-    toast.className = `fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-3 rounded-xl shadow-2xl text-white text-xs font-semibold page-fade-in ${
-      type === 'success' ? 'bg-emerald-600' : type === 'error' ? 'bg-red-600' : 'bg-slate-900 border border-slate-700'
-    }`;
+    toast.className = `fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-3 rounded-xl shadow-2xl text-white text-xs font-semibold page-fade-in ${type === 'success' ? 'bg-emerald-600' : type === 'error' ? 'bg-red-600' : 'bg-slate-900 border border-slate-700'
+      }`;
 
     const icon = type === 'success' ? 'fa-circle-check' : type === 'error' ? 'fa-triangle-exclamation' : 'fa-circle-info text-amber-400';
     toast.innerHTML = `
@@ -276,11 +275,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="page-fade-in">
         ${renderPageBanner(
-          "About Us - Government e Marketplace",
-          "Learn about India's National Public Procurement Portal, its legal mandate, core operational pillars, and grassroots economic impact.",
-          "fa-circle-info",
-          "Web Info"
-        )}
+      "About Us - Government e Marketplace",
+      "Learn about India's National Public Procurement Portal, its legal mandate, core operational pillars, and grassroots economic impact.",
+      "fa-circle-info",
+      "Web Info"
+    )}
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
           
@@ -420,11 +419,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="page-fade-in">
         ${renderPageBanner(
-          "Introduction to GeM 2.0 & Next-Gen Features",
-          "The state-of-the-art AI-powered public procurement infrastructure delivering hyper-fast, auditable, and intelligent transactions.",
-          "fa-rocket",
-          "GeM 2.0"
-        )}
+      "Introduction to GeM 2.0 & Next-Gen Features",
+      "The state-of-the-art AI-powered public procurement infrastructure delivering hyper-fast, auditable, and intelligent transactions.",
+      "fa-rocket",
+      "GeM 2.0"
+    )}
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
           
@@ -613,11 +612,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="page-fade-in">
         ${renderPageBanner(
-          "Our Inclusive Initiatives & Societal Impact",
-          "Explore government-backed programs driving grassroots empowerment for MSMEs, women entrepreneurs, rural SHGs, and green innovation.",
-          "fa-lightbulb",
-          "GeM 2.0"
-        )}
+      "Our Inclusive Initiatives & Societal Impact",
+      "Explore government-backed programs driving grassroots empowerment for MSMEs, women entrepreneurs, rural SHGs, and green innovation.",
+      "fa-lightbulb",
+      "GeM 2.0"
+    )}
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
           
@@ -774,11 +773,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="page-fade-in">
         ${renderPageBanner(
-          "Subscription Model & Fee Structure",
-          "Fair, transparent, and volume-linked fee tiers designed to ensure zero cost for MSMEs while supporting high-capacity enterprise features.",
-          "fa-credit-card",
-          "Pricing"
-        )}
+      "Subscription Model & Fee Structure",
+      "Fair, transparent, and volume-linked fee tiers designed to ensure zero cost for MSMEs while supporting high-capacity enterprise features.",
+      "fa-credit-card",
+      "Pricing"
+    )}
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
           
@@ -963,11 +962,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="page-fade-in">
         ${renderPageBanner(
-          "Open Data Statistics & Live Analytics",
-          "Explore real-time procurement volume, category distribution, and demographic participation across Indian States.",
-          "fa-chart-pie",
-          "GeM 2.0"
-        )}
+      "Open Data Statistics & Live Analytics",
+      "Explore real-time procurement volume, category distribution, and demographic participation across Indian States.",
+      "fa-chart-pie",
+      "GeM 2.0"
+    )}
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
           
@@ -1134,11 +1133,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="page-fade-in">
         ${renderPageBanner(
-          "Frequently Asked Questions (FAQs)",
-          "Find instant answers to common questions regarding buyer onboarding, seller catalogs, bidding rules, and payments.",
-          "fa-circle-question",
-          "Need Help"
-        )}
+      "Frequently Asked Questions (FAQs)",
+      "Find instant answers to common questions regarding buyer onboarding, seller catalogs, bidding rules, and payments.",
+      "fa-circle-question",
+      "Need Help"
+    )}
 
         <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
           
@@ -1224,7 +1223,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const body = header.nextElementSibling;
           const icon = header.querySelector('i');
           const isHidden = body.classList.contains('hidden');
-          
+
           document.querySelectorAll('.faq-accordion-body').forEach(b => b.classList.add('hidden'));
           document.querySelectorAll('.faq-accordion-header i').forEach(i => i.classList.remove('rotate-180'));
 
@@ -1263,11 +1262,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="page-fade-in">
         ${renderPageBanner(
-          "Document Help & Training Center",
-          "Download official step-by-step PDF manuals, watch interactive portal walkthroughs, and review API documentation.",
-          "fa-book-open",
-          "Web Info"
-        )}
+      "Document Help & Training Center",
+      "Download official step-by-step PDF manuals, watch interactive portal walkthroughs, and review API documentation.",
+      "fa-book-open",
+      "Web Info"
+    )}
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
           
@@ -1386,11 +1385,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="page-fade-in">
         ${renderPageBanner(
-          "Terms of Use & General Contract Conditions (GCC)",
-          "Legal agreements, user responsibilities, and dispute resolution guidelines for buyers and sellers on GeM 2.0.",
-          "fa-gavel",
-          "Web Info"
-        )}
+      "Terms of Use & General Contract Conditions (GCC)",
+      "Legal agreements, user responsibilities, and dispute resolution guidelines for buyers and sellers on GeM 2.0.",
+      "fa-gavel",
+      "Web Info"
+    )}
 
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
           <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6 text-xs text-slate-700 leading-relaxed">
@@ -1451,11 +1450,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="page-fade-in">
         ${renderPageBanner(
-          "Website Policy & Data Privacy",
-          "Commitment to information security, data protection under DPDP Act 2023, and accessibility guidelines.",
-          "fa-shield-halved",
-          "Web Info"
-        )}
+      "Website Policy & Data Privacy",
+      "Commitment to information security, data protection under DPDP Act 2023, and accessibility guidelines.",
+      "fa-shield-halved",
+      "Web Info"
+    )}
 
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
           <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6 text-xs text-slate-700 leading-relaxed">
@@ -1509,11 +1508,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="page-fade-in">
         ${renderPageBanner(
-          "Portal Feedback & Experience Survey",
-          "Your inputs help us refine GeM 2.0 algorithms, speed, and usability for buyers and sellers across the nation.",
-          "fa-comments",
-          "Need Help"
-        )}
+      "Portal Feedback & Experience Survey",
+      "Your inputs help us refine GeM 2.0 algorithms, speed, and usability for buyers and sellers across the nation.",
+      "fa-comments",
+      "Need Help"
+    )}
 
         <div class="max-w-2xl mx-auto px-4 sm:px-6">
           <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg">
@@ -1642,11 +1641,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="page-fade-in">
         ${renderPageBanner(
-          "Grievance Redressal & Support Ticket Desk",
-          "Submit urgent technical queries, payment discrepancies, or track the resolution timeline of existing tickets.",
-          "fa-ticket",
-          "Need Help"
-        )}
+      "Grievance Redressal & Support Ticket Desk",
+      "Submit urgent technical queries, payment discrepancies, or track the resolution timeline of existing tickets.",
+      "fa-ticket",
+      "Need Help"
+    )}
 
         <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
           
@@ -1776,7 +1775,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderTicketList = (filterQuery = "") => {
       const resultsEl = document.getElementById('track-results-container');
       const tickets = getUserTickets();
-      const filtered = tickets.filter(t => 
+      const filtered = tickets.filter(t =>
         !filterQuery || t.id.toLowerCase().includes(filterQuery.toLowerCase()) || t.subject.toLowerCase().includes(filterQuery.toLowerCase())
       );
 
@@ -1802,12 +1801,10 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="text-[10px] text-slate-400 font-semibold block mt-0.5">Created on ${t.date} &bull; ${t.category}</span>
             </div>
             <div class="flex items-center gap-2">
-              <span class="text-[10px] font-bold px-2.5 py-1 rounded-full uppercase ${
-                t.priority === 'Critical' ? 'bg-red-100 text-red-700' : t.priority === 'High' ? 'bg-amber-100 text-amber-800' : 'bg-blue-100 text-blue-700'
-              }">${t.priority} Priority</span>
-              <span class="text-[10px] font-bold px-2.5 py-1 rounded-full uppercase ${
-                t.status === 'Resolved' ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'
-              }">${t.status}</span>
+              <span class="text-[10px] font-bold px-2.5 py-1 rounded-full uppercase ${t.priority === 'Critical' ? 'bg-red-100 text-red-700' : t.priority === 'High' ? 'bg-amber-100 text-amber-800' : 'bg-blue-100 text-blue-700'
+        }">${t.priority} Priority</span>
+              <span class="text-[10px] font-bold px-2.5 py-1 rounded-full uppercase ${t.status === 'Resolved' ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'
+        }">${t.status}</span>
             </div>
           </div>
 
@@ -1845,11 +1842,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="page-fade-in">
         ${renderPageBanner(
-          "Contact Us & Nodal Directory",
-          "Reach out to GeM SPV headquarters, regional nodal officers, and 24/7 bilingual toll-free helpdesk agents.",
-          "fa-headset",
-          "Need Help"
-        )}
+      "Contact Us & Nodal Directory",
+      "Reach out to GeM SPV headquarters, regional nodal officers, and 24/7 bilingual toll-free helpdesk agents.",
+      "fa-headset",
+      "Need Help"
+    )}
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
           
@@ -1969,11 +1966,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="page-fade-in">
         ${renderPageBanner(
-          `Search Results for: "${query || 'All Catalogs'}"`,
-          "Showing matching verified product categories, active tender bids, policies, and seller catalogs.",
-          "fa-magnifying-glass",
-          "Search"
-        )}
+      `Search Results for: "${query || 'All Catalogs'}"`,
+      "Showing matching verified product categories, active tender bids, policies, and seller catalogs.",
+      "fa-magnifying-glass",
+      "Search"
+    )}
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
           
